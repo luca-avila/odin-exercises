@@ -1,4 +1,4 @@
-export function Book (name, author, pages, read = false) {
+function Book (name, author, pages, read = false) {
 
     if (!new.target) {
         throw new Error('Use the new keyword to create a new Book instance');
@@ -23,3 +23,5 @@ export function Book (name, author, pages, read = false) {
 Book.prototype.toggleRead = function() {
     this.read = !this.read;
 }
+
+export { Book };

@@ -1,18 +1,18 @@
 let library = [];
 
-export function addBook(book) {
+function addBook(book) {
     library.push(book);
 }
 
-export function removeBook(book) {
+function removeBook(book) {
     library = library.filter(b => b.id !== book.id);
 }
 
-export function getBooks() {
+function getBooks() {
     return library;
 }
 
-export function findBook(id) {
+function findBook(id) {
     return library.find(b => b.id === id);
 }
 

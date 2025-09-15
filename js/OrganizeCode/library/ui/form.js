@@ -29,3 +29,5 @@ function createBookForm() {
 
     return form;
 }
+
+export { createBookForm };
