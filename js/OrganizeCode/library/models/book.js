@@ -13,7 +13,7 @@ function Book (name, author, pages, read = false) {
         throw new Error('Read must be a boolean');
     }
 
-    this.id = crypto.randomUUID();
+    this.id = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substring(2, 11);
     this.name = name;
     this.author = author;
     this.pages = pages;

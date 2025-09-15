@@ -19,7 +19,11 @@ function displayBooks(library) {
         bookElement.appendChild(author);
 
         const pages = document.createElement('p');
-        pages.textContent = book.pages;
+        if (book.pages) {
+            pages.textContent = book.pages;
+        } else {
+            pages.textContent = 'Unknown';
+        }
         pages.classList.add('pages');
         bookElement.appendChild(pages);
 
