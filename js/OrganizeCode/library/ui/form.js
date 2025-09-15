@@ -10,7 +10,7 @@ function createBookForm() {
     const nameInput = document.createElement('input');
     nameInput.type = 'text';
     nameInput.id = 'book-name';
-    nameInput.placeholder = 'Name';
+    nameInput.required = true;
     form.appendChild(nameInput);
 
     const authorLabel = document.createElement('label');
@@ -21,7 +21,7 @@ function createBookForm() {
     const authorInput = document.createElement('input');
     authorInput.type = 'text';
     authorInput.id = 'book-author';
-    authorInput.placeholder = 'Author';
+    authorInput.required = true;
     form.appendChild(authorInput);
 
     const pagesLabel = document.createElement('label');
@@ -32,7 +32,6 @@ function createBookForm() {
     const pagesInput = document.createElement('input');
     pagesInput.type = 'number';
     pagesInput.id = 'book-pages';
-    pagesInput.placeholder = 'Pages';
     form.appendChild(pagesInput);
 
     const readLabel = document.createElement('label');
@@ -43,7 +42,6 @@ function createBookForm() {
     const readInput = document.createElement('input');
     readInput.type = 'checkbox';
     readInput.id = 'book-read';
-    readInput.placeholder = 'Read';
     form.appendChild(readInput);
 
     const submitButton = document.createElement('button');
@@ -51,6 +49,7 @@ function createBookForm() {
     submitButton.textContent = 'Submit';
     form.appendChild(submitButton);
 
+    m
     return form;
 }
 
