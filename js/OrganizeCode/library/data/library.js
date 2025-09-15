@@ -1,18 +1,18 @@
-const library = [];
+let library = [];
 
-function addBook(book) {
+export function addBook(book) {
     library.push(book);
 }
 
-function removeBook(book) {
+export function removeBook(book) {
     library = library.filter(b => b.id !== book.id);
 }
 
-function getBooks() {
+export function getBooks() {
     return library;
 }
 
-function findBook(id) {
+export function findBook(id) {
     return library.find(b => b.id === id);
 }
 
