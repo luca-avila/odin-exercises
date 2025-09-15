@@ -49,7 +49,6 @@ function createBookForm() {
     submitButton.textContent = 'Submit';
     form.appendChild(submitButton);
 
-    m
     return form;
 }
 
