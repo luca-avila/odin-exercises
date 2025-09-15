@@ -32,4 +32,8 @@ function handleFormSubmit(event) {
     form.reset();
 }
 
+function removeBook(event) {
+    
+}
+
 export { handleFormSubmit };

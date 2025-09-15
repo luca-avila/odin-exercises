@@ -1,3 +1,5 @@
+import { getBooks } from '../data/library.js';
+
 function displayBooks(library) {
     const container = document.createElement('div');
     container.classList.add('library');
@@ -28,7 +30,11 @@ function displayBooks(library) {
         bookElement.appendChild(pages);
 
         const read = document.createElement('p');
-        read.textContent = book.read;
+        if (book.read) {    
+            read.textContent = 'Read';
+        } else {
+            read.textContent = 'Not Read';
+        }
         read.classList.add('read');
         bookElement.appendChild(read);
 
@@ -48,4 +54,17 @@ function displayBooks(library) {
     return container;
 }
 
-export { displayBooks };
+function refreshDisplay() {
+    // Remove old books container
+    const oldContainer = document.querySelector('.library');
+    if (oldContainer) {
+        oldContainer.remove();
+    }
+    
+    // Create new books container with updated data
+    const library = getBooks();
+    const booksContainer = displayBooks(library);
+    document.body.append(booksContainer);
+}
+
+export { displayBooks, refreshDisplay };
