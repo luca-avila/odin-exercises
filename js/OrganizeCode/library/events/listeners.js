@@ -28,6 +28,9 @@ function handleFormSubmit(event) {
     const newBook = new Book(name, author, pagesNumber, read);
 
     addBook(newBook);
+    
+    // Clear the form
+    form.reset();
 }
 
 function handleBookButton(event) {

@@ -22,16 +22,49 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add sample books to library
     sampleBooks.forEach(book => addBook(book));
     
-    // Add form and library to app and render initial state
-    const library = getBooksContainer(state.books);
+    // Add form to app
     app.appendChild(form);
-    app.appendChild(library);
-    render(state, form, library, displayFormButton);
+
+    // Function to update the library display
+    function updateLibraryDisplay() {
+        // Remove old library if it exists
+        const oldLibrary = app.querySelector('.library');
+        if (oldLibrary) {
+            oldLibrary.remove();
+        }
+        
+        // Create new library with current state
+        const library = getBooksContainer(state.books);
+        app.appendChild(library);
+        
+        // Render current state
+        render(state, form, library, displayFormButton);
+    }
+
+    // Initial display
+    updateLibraryDisplay();
 
     // Add event listeners
+    form.addEventListener('submit', (event) => {
+        handleFormSubmit(event);
+        // Return to library view and update display
+        state.view = 'library';
+        updateLibraryDisplay();
+    });
+    
     displayFormButton.addEventListener('click', () => {
         state.view = 'form';
-        render(state, form, library, displayFormButton);
+        const currentLibrary = app.querySelector('.library');
+        render(state, form, currentLibrary, displayFormButton);
     });
 
+    // Add event delegation for remove/toggle buttons
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('remove') || event.target.classList.contains('toggle-read')) {
+            handleBookButton(event);
+            // Update display after removing/toggling
+            updateLibraryDisplay();
+        }
+    });
+    
 });
