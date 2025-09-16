@@ -1,31 +1,31 @@
 import { handleFormSubmit, handleBookButton } from './events/listeners.js';
 import { createBookForm } from './ui/form.js';
-import { getBooks } from './data/library.js';
+import { getBooks, addBook } from './data/library.js';
 import { displayBooks, refreshDisplay } from './ui/render.js';
+import { Book } from './models/book.js';
 
-// simple test
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Add form
-    const formEl = createBookForm();
-    document.body.append(formEl);
+    const app = document.querySelector('.app');
+    const displayFormButton = document.querySelector('.display-form');
 
-    // set up form submission
-    const form = document.getElementById('book-form');
-    if (form) {
-        form.addEventListener('submit', event => {
-            handleFormSubmit(event);
-            refreshDisplay();
-        });
-    }
+    // Create 5 sample books
+    const sampleBooks = [
+        new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false),
+        new Book("1984", "George Orwell", 328, true),
+        new Book("To Kill a Mockingbird", "Harper Lee", 281, false),
+        new Book("Pride and Prejudice", "Jane Austen", 432, true),
+        new Book("The Catcher in the Rye", "J.D. Salinger", 277, false)
+    ];
+    
+    // Add books to library
+    sampleBooks.forEach(book => addBook(book));
+    
+    // Display books
+    let library = getBooks();
+    let libraryElement = displayBooks(library);
+    app.appendChild(libraryElement);
 
-    // Test display with current books
-    const library = getBooks(); 
-    const booksContainer = displayBooks(library);
-    document.body.append(booksContainer);
-
-    // Test remove book
-    document.addEventListener('click', e=>{
-        handleBookButton(e);
-        refreshDisplay();
-    });
+    // Setup add book button
 });
