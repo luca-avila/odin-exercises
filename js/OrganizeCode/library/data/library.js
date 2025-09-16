@@ -1,11 +1,14 @@
-let library = [];
+let state =  {
+    view: 'library',
+    books: []
+}
 
 function addBook(book) {
-    library.push(book);
+    state.books.push(book);
 }
 
 function removeBook(bookId) {
-    library = library.filter(b => b.id !== bookId);
+    state.books = state.books.filter(b => b.id !== bookId);
 }
 
 function toggleRead(bookId) {
@@ -14,11 +17,11 @@ function toggleRead(bookId) {
 }
 
 function getBooks() {
-    return library;
+    return state.books;
 }
 
 function findBook(bookId) {
-    return library.find(b => b.id === bookId);
+    return state.books.find(b => b.id === bookId);
 }
 
-export { addBook, removeBook, getBooks, findBook, toggleRead };
+export { addBook, removeBook, getBooks, findBook, toggleRead, state };

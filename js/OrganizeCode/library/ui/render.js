@@ -1,6 +1,6 @@
 import { getBooks } from '../data/library.js';
 
-function displayBooks(library) {
+function getBooksContainer(library) {
     const container = document.createElement('div');
     container.classList.add('library');
 
@@ -54,17 +54,16 @@ function displayBooks(library) {
     return container;
 }
 
-function refreshDisplay() {
-    // Remove old books container
-    const oldContainer = document.querySelector('.library');
-    if (oldContainer) {
-        oldContainer.remove();
+function render(state, form, library, displayFormButton) {
+    if (state.view === 'library') {
+        form.classList.add('hidden');
+        library.classList.remove('hidden');
+        displayFormButton.classList.remove('hidden');
+    } else {
+        form.classList.remove("hidden");
+        library.classList.add("hidden");
+        displayFormButton.classList.add('hidden');
     }
-    
-    // Create new books container with updated data
-    const library = getBooks();
-    const booksContainer = displayBooks(library);
-    document.body.append(booksContainer);
 }
 
-export { displayBooks, refreshDisplay };
+export { getBooksContainer, render };

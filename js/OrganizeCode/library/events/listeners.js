@@ -12,6 +12,7 @@ function handleFormSubmit(event) {
     const pages = form.querySelector('#book-pages').value;
     const read = form.querySelector('#book-read').checked;
 
+
     // Validate required fields
     if (!name || !author) {
         throw new Error('Name and author are required!');
@@ -27,9 +28,6 @@ function handleFormSubmit(event) {
     const newBook = new Book(name, author, pagesNumber, read);
 
     addBook(newBook);
-    console.log('New book created: ', newBook);
-
-    form.reset();
 }
 
 function handleBookButton(event) {
