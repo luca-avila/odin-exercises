@@ -1,4 +1,4 @@
-import { addBook } from "../data/library.js";
+import { addBook, removeBook, toggleRead } from "../data/library.js";
 import { Book } from "../models/book.js";
 
 
@@ -32,8 +32,23 @@ function handleFormSubmit(event) {
     form.reset();
 }
 
-function removeBook(event) {
-    
+function handleBookButton(event) {
+    const btnType = event.target.textContent;
+    let bookId;
+    if (!btnType) return;
+
+    try {
+        bookId = event.target.closest('.book').dataset.id;
+    } catch {
+        return;
+    }
+ 
+
+    if (btnType === 'Remove') {
+        removeBook(bookId);
+    } else if (btnType === 'Toggle Read'){
+        toggleRead(bookId);
+    }
 }
 
-export { handleFormSubmit };
+export { handleFormSubmit, handleBookButton };

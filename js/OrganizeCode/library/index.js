@@ -1,4 +1,4 @@
-import { handleFormSubmit } from './events/listeners.js';
+import { handleFormSubmit, handleBookButton } from './events/listeners.js';
 import { createBookForm } from './ui/form.js';
 import { getBooks } from './data/library.js';
 import { displayBooks, refreshDisplay } from './ui/render.js';
@@ -22,4 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const library = getBooks(); 
     const booksContainer = displayBooks(library);
     document.body.append(booksContainer);
+
+    // Test remove book
+    document.addEventListener('click', e=>{
+        handleBookButton(e);
+        refreshDisplay();
+    });
 });
