@@ -3,7 +3,7 @@ function createPlayer(name) {
     const getWins = () => wins;
     const addWin = () => wins++;
 
-    return { name, getWins, addWin }
+    return { name, getWins, addWin };
 }
 
-export { createPlayer }
+export { createPlayer };
