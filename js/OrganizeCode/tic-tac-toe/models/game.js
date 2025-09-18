@@ -1,7 +1,7 @@
 import { gameboard as board} from './gameboard.js';
 import { createPlayer } from './player.js';
 
-function createGame() {
+const game = (() => {
     const gameboard = board;
     const players = {
         player1: createPlayer('Player 1', 'X'),
@@ -92,6 +92,6 @@ function createGame() {
         getGameStatus,
         resetGame
     };
-}
+})();
 
-export { createGame };
+export { game };
