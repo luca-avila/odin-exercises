@@ -5,3 +5,5 @@ function createPlayer(name) {
 
     return { name, getWins, addWin }
 }
+
+export { createPlayer }
