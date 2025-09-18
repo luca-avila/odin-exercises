@@ -1,9 +1,9 @@
-function createPlayer(name) {
+function createPlayer(name, marker) {
     let wins = 0;
     const getWins = () => wins;
     const addWin = () => wins++;
 
-    return { name, getWins, addWin };
+    return { name, marker, getWins, addWin };
 }
 
 export { createPlayer };
