@@ -78,10 +78,12 @@ function setDefaultHiddenState(){
     const playerData = document.querySelectorAll('.player-data');
     const gameBoard = document.querySelector('.game-board');
     const resetBoardButton = document.querySelector('.reset-board-button');
+    const gameContainer = document.querySelector('.game-container');
     
     playerData.forEach(player => player.classList.add('hidden'));
     if (gameBoard) gameBoard.classList.add('hidden');
     if (resetBoardButton) resetBoardButton.classList.add('hidden');
+    if (gameContainer) gameContainer.classList.add('hidden');
 }
 
 function toggleHiddenState(){   
@@ -89,6 +91,7 @@ function toggleHiddenState(){
     const playerData = document.querySelectorAll('.player-data');
     const gameBoard = document.querySelector('.game-board');
     const resetBoardButton = document.querySelector('.reset-board-button');
+    const gameContainer = document.querySelector('.game-container');
     playerData.forEach(player => player.classList.remove('hidden'));
     gameBoard.classList.remove('hidden');
     resetBoardButton.classList.remove('hidden');
@@ -96,6 +99,7 @@ function toggleHiddenState(){
     // Change default visible state to hidden
     const namesInterface = document.querySelector('.names-interface');
     namesInterface.classList.add('hidden');
+    gameContainer.classList.remove('hidden');
 }
 
 export { createNameInput, createNamesInterface, displayPlayerData, resetBoardButton, updateScore, updateCell, toggleHiddenState, setDefaultHiddenState };
