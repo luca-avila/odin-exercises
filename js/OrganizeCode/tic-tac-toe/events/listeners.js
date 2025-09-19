@@ -1,4 +1,4 @@
-import { toggleHiddenState, displayPlayerData } from '../ui/interface.js';
+import { toggleHiddenState, displayPlayerData, updateScore, resetBoardButton } from '../ui/interface.js';
 import { game } from '../models/game.js';
 import { createPlayer } from '../models/player.js';
 
@@ -15,16 +15,19 @@ function setCellClickListener(cell) {
             // Update the cell display
             cell.textContent = playerWhoMoved.marker;
             cell.classList.add('occupied');
-            
+            const resetButton = document.querySelector('.reset-board-button');
             // Check for win or tie
             if (game.checkWin()) {
                 alert(`${playerWhoMoved.name} wins!`);
                 playerWhoMoved.addWin();
                 updateScore(playerWhoMoved.name, playerWhoMoved.getWins());
-                resetBoardButton();
+                
+                // Trigger reset board button click
+                resetButton.click();
             } else if (game.checkTie()) {
                 alert('It\'s a tie!');
-                resetBoardButton();
+                // Trigger reset board button click
+                resetButton.click();
             }
         }
     });
