@@ -1,0 +1,64 @@
+function createNameInput(labelText) {
+    const inputContainer = document.createElement('div');
+    inputContainer.classList.add('name-input');
+
+    const label = document.createElement('label');
+    label.textContent = labelText;
+    label.htmlFor = 'name';
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.id = 'name';
+    input.required = true;
+    input.placeholder = 'Enter your name';
+
+    inputContainer.appendChild(label);
+    inputContainer.appendChild(input);
+
+    return inputContainer;
+}
+
+function createNamesInterface() {
+    const namesInterface = document.createElement('div');
+
+    const player1NameInput = createNameInput('Player 1');
+    const player2NameInput = createNameInput('Player 2');
+    player1NameInput.classList.add('player1-name');
+    player2NameInput.classList.add('player2-name');
+
+    namesInterface.appendChild(player1NameInput);
+    namesInterface.appendChild(player2NameInput);
+
+    const startButton = document.createElement('button');
+    startButton.textContent = 'Start Game';
+    startButton.classList.add('start-button');
+
+    namesInterface.appendChild(startButton);
+
+    return namesInterface;
+}
+
+function displayPlayersData(name, score) {
+    const playersData = document.createElement('div');
+    playersData.classList.add('players-data');
+
+    const playerName = document.createElement('h2');
+    playerName.textContent = name;
+    playersData.appendChild(playerName);
+
+    const playerScore = document.createElement('p');
+    playerScore.textContent = score;
+    playersData.appendChild(playerScore);
+
+    return playersData;
+}
+
+function resetBoardButton() {
+    const resetBoardButton = document.createElement('button');
+    resetBoardButton.textContent = 'Reset Board';
+    resetBoardButton.classList.add('reset-board-button');
+    return resetBoardButton;
+}
+
+
+
+export { createNameInput, createNamesInterface, displayPlayersData, resetBoardButton };
