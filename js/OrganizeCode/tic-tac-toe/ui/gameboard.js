@@ -17,9 +17,13 @@ function createFirstColumn() {
     const cell2 = createCell();
     const cell3 = createCell();
 
-    cell1.classList.add('row-1');
-    cell2.classList.add('row-2');
-    cell3.classList.add('row-3');
+    cell1.dataset.row = '1';
+    cell1.dataset.column = '1';
+    cell2.dataset.row = '2';
+    cell2.dataset.column = '1';
+    cell3.dataset.row = '3';
+    cell3.dataset.column = '1';
+
 
     firstRow.appendChild(cell1);
     firstRow.appendChild(cell2);
@@ -36,9 +40,12 @@ function createSecondColumn() {
     const cell2 = createCell();
     const cell3 = createCell();
 
-    cell1.classList.add('row-1');
-    cell2.classList.add('row-2');
-    cell3.classList.add('row-3');
+    cell1.dataset.row = '1';
+    cell1.dataset.column = '2';
+    cell2.dataset.row = '2';
+    cell2.dataset.column = '2';
+    cell3.dataset.row = '3';
+    cell3.dataset.column = '2';
 
     secondRow.appendChild(cell1);
     secondRow.appendChild(cell2);
@@ -55,9 +62,12 @@ function createThirdColumn() {
     const cell2 = createCell();
     const cell3 = createCell();
 
-    cell1.classList.add('row-1');
-    cell2.classList.add('row-2');
-    cell3.classList.add('row-3');
+    cell1.dataset.row = '1';
+    cell1.dataset.column = '3';
+    cell2.dataset.row = '2';
+    cell2.dataset.column = '3';
+    cell3.dataset.row = '3';
+    cell3.dataset.column = '3';
 
     thirdRow.appendChild(cell1);
     thirdRow.appendChild(cell2);
