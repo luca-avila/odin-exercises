@@ -29,7 +29,7 @@ h1 {
     background-color: #fff;
 }
 
-.first-row, .second-row, .third-row {
+.first-column, .second-column, .third-column {
     display: grid;
     gap: 16px;
 }
