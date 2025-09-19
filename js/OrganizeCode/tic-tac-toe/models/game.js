@@ -84,6 +84,7 @@ const game = (() => {
     function setPlayers(player1, player2){
         players.player1 = player1;
         players.player2 = player2;
+        currentPlayer = players.player1; // Set the current player to player1
     }
 
     return { 

@@ -4,10 +4,8 @@ function createNameInput(labelText) {
 
     const label = document.createElement('label');
     label.textContent = labelText;
-    label.htmlFor = 'name';
     const input = document.createElement('input');
     input.type = 'text';
-    input.id = 'name';
     input.required = true;
     input.placeholder = 'Enter your name';
 

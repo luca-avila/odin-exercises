@@ -1,24 +1,25 @@
 import { createGameboard } from './ui/gameboard.js';
-import { createCellClickListener } from './events/listeners.js';
-import { createNamesInterface, displayPlayerData, resetBoardButton, updateScore, toggleHiddenState, setDefaultHiddenState } from './ui/interface.js';
+import { setCellClickListener, setResetBoardButtonListener, setStartButtonListener } from './events/listeners.js';
+import { createNamesInterface, resetBoardButton, setDefaultHiddenState } from './ui/interface.js';
 
-const gameboard = createGameboard();
-
-const player1Data = displayPlayerData('Player1', 0);
-const player2Data = displayPlayerData('Player2', 0);
-document.body.appendChild(player2Data);
-document.body.appendChild(player1Data);
-const resetBtn = resetBoardButton();
-document.body.appendChild(resetBtn);
-document.body.appendChild(gameboard);
-
-const namesInterface = createNamesInterface();
-document.body.appendChild(namesInterface);
-
-setDefaultHiddenState();
-
-const startButton = document.querySelector('.start-button');
-startButton.addEventListener('click', toggleHiddenState);
-
-const cells = document.querySelectorAll('.cell');
-cells.forEach(cell => createCellClickListener(cell));
+document.addEventListener('DOMContentLoaded', () => {
+    // Create and append UI elements
+    const gameboard = createGameboard();
+    const namesInterface = createNamesInterface();
+    const resetBtn = resetBoardButton();
+    
+    document.body.appendChild(namesInterface);
+    document.body.appendChild(resetBtn);
+    document.body.appendChild(gameboard);
+    
+    // Set default hidden state
+    setDefaultHiddenState();
+    
+    // Set up event listeners
+    setStartButtonListener();
+    setResetBoardButtonListener();
+    
+    // Set up cell click listeners
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => setCellClickListener(cell));
+});
