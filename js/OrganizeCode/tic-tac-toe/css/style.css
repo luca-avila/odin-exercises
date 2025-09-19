@@ -33,3 +33,7 @@ h1 {
     display: grid;
     gap: 16px;
 }
+
+.hidden {
+    display: none;
+}

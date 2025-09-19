@@ -19,6 +19,7 @@ function createNameInput(labelText) {
 
 function createNamesInterface() {
     const namesInterface = document.createElement('div');
+    namesInterface.classList.add('names-interface');
 
     const player1NameInput = createNameInput('Player 1');
     const player2NameInput = createNameInput('Player 2');
@@ -70,4 +71,18 @@ function updateCell(row, column, value){
     cell.textContent = value;
 }
 
-export { createNameInput, createNamesInterface, displayPlayerData, resetBoardButton, updateScore, updateCell };
+function toggleHiddenState(){
+    // Change default hidden state to visible
+    const playerData = document.querySelector('.player-data');
+    const gameBoard = document.querySelector('#game-board');
+    const resetBoardButton = document.querySelector('.reset-board-button');
+    playerData.classList.remove('hidden');
+    gameBoard.classList.remove('hidden');
+    resetBoardButton.classList.remove('hidden');
+
+    // Change default visible state to hidden
+    const namesInterface = document.querySelector('.names-interface');
+    namesInterface.classList.add('hidden');
+}
+
+export { createNameInput, createNamesInterface, displayPlayerData, resetBoardButton, updateScore, updateCell, toggleHiddenState };
