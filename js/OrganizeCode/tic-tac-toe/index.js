@@ -4,13 +4,21 @@ import { createNamesInterface, resetBoardButton, setDefaultHiddenState } from '.
 
 document.addEventListener('DOMContentLoaded', () => {
     // Create and append UI elements
+    const app = document.createElement('div');
+    app.classList.add('app');
+    
+    const gameContainer = document.createElement('div');
+    gameContainer.classList.add('game-container');
+    
     const gameboard = createGameboard();
     const namesInterface = createNamesInterface();
     const resetBtn = resetBoardButton();
     
     document.body.appendChild(namesInterface);
-    document.body.appendChild(resetBtn);
-    document.body.appendChild(gameboard);
+    app.appendChild(resetBtn);
+    gameContainer.appendChild(gameboard);
+    app.appendChild(gameContainer);
+    document.body.appendChild(app);
     
     // Set default hidden state
     setDefaultHiddenState();
