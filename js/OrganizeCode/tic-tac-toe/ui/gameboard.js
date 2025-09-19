@@ -12,18 +12,37 @@ function createGameboard() {
 function createFirstRow() {
     const firstRow = document.createElement('div');
     firstRow.classList.add('first-row');
-    firstRow.appendChild(createCell());
-    firstRow.appendChild(createCell());
-    firstRow.appendChild(createCell());
+
+    const cell1 = createCell();
+    const cell2 = createCell();
+    const cell3 = createCell();
+
+    cell1.classList.add('col-1');
+    cell2.classList.add('col-2');
+    cell3.classList.add('col-3');
+
+    firstRow.appendChild(cell1);
+    firstRow.appendChild(cell2);
+    firstRow.appendChild(cell3);
+
     return firstRow;
 }
 
 function createSecondRow() {
     const secondRow = document.createElement('div');    
     secondRow.classList.add('second-row');
-    secondRow.appendChild(createCell());
-    secondRow.appendChild(createCell());
-    secondRow.appendChild(createCell());
+    
+    const cell1 = createCell();
+    const cell2 = createCell();
+    const cell3 = createCell();
+
+    cell1.classList.add('col-1');
+    cell2.classList.add('col-2');
+    cell3.classList.add('col-3');
+
+    secondRow.appendChild(cell1);
+    secondRow.appendChild(cell2);
+    secondRow.appendChild(cell3);
 
     return secondRow;
 }
@@ -31,9 +50,19 @@ function createSecondRow() {
 function createThirdRow() {
     const thirdRow = document.createElement('div');
     thirdRow.classList.add('third-row');
-    thirdRow.appendChild(createCell());
-    thirdRow.appendChild(createCell());
-    thirdRow.appendChild(createCell());
+
+    const cell1 = createCell();
+    const cell2 = createCell();
+    const cell3 = createCell();
+
+    cell1.classList.add('col-1');
+    cell2.classList.add('col-2');
+    cell3.classList.add('col-3');
+
+    thirdRow.appendChild(cell1);
+    thirdRow.appendChild(cell2);
+    thirdRow.appendChild(cell3);
+
     return thirdRow;
 }
 
