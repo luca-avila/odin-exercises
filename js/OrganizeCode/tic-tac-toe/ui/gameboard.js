@@ -1,6 +1,6 @@
 function createGameboard() {
     const gameboard = document.createElement('div');
-    gameboard.id = 'game-board';
+    gameboard.classList.add('game-board');
 
     gameboard.appendChild(createFirstColumn());
     gameboard.appendChild(createSecondColumn());
