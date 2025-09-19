@@ -19,13 +19,18 @@ function createNamesInterface() {
     const namesInterface = document.createElement('div');
     namesInterface.classList.add('names-interface');
 
+    const namesContainer = document.createElement('div');
+    namesContainer.classList.add('names-container');
+
     const player1NameInput = createNameInput('Player 1');
     const player2NameInput = createNameInput('Player 2');
     player1NameInput.classList.add('player1-name');
     player2NameInput.classList.add('player2-name');
 
-    namesInterface.appendChild(player1NameInput);
-    namesInterface.appendChild(player2NameInput);
+    namesContainer.appendChild(player1NameInput);
+    namesContainer.appendChild(player2NameInput);
+
+    namesInterface.appendChild(namesContainer);
 
     const startButton = document.createElement('button');
     startButton.textContent = 'Start Game';
