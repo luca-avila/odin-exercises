@@ -37,9 +37,9 @@ function createNamesInterface() {
     return namesInterface;
 }
 
-function displayPlayersData(name, score) {
+function displayPlayerData(name, score) {
     const playersData = document.createElement('div');
-    playersData.classList.add('players-data');
+    playersData.classList.add('player-data');
 
     const playerName = document.createElement('h2');
     playerName.textContent = name;
@@ -47,6 +47,7 @@ function displayPlayersData(name, score) {
 
     const playerScore = document.createElement('p');
     playerScore.textContent = score;
+    playerScore.id = `${name}-score`;
     playersData.appendChild(playerScore);
 
     return playersData;
@@ -59,6 +60,14 @@ function resetBoardButton() {
     return resetBoardButton;
 }
 
+function updateScore(player, score){
+    const playersData = document.querySelector(`#${player}-score`);
+    playersData.textContent = score;
+}
 
+function updateCell(row, column, value){
+    const cell = document.querySelector(`[data-row="${row}"][data-column="${column}"]`);
+    cell.textContent = value;
+}
 
-export { createNameInput, createNamesInterface, displayPlayersData, resetBoardButton };
+export { createNameInput, createNamesInterface, displayPlayerData, resetBoardButton, updateScore, updateCell };

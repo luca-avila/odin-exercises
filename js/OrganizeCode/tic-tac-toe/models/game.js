@@ -1,11 +1,10 @@
 import { gameboard as board} from './gameboard.js';
-import { createPlayer } from './player.js';
 
 const game = (() => {
     const gameboard = board;
     const players = {
-        player1: createPlayer('Player 1', 'X'),
-        player2: createPlayer('Player 2', 'O')
+        player1: null,
+        player2: null
     };
     let currentPlayer = players.player1;
 
@@ -82,6 +81,11 @@ const game = (() => {
         return false; // Invalid move
     }
 
+    function setPlayers(player1, player2){
+        players.player1 = player1;
+        players.player2 = player2;
+    }
+
     return { 
         players, 
         gameboard, 
@@ -90,7 +94,8 @@ const game = (() => {
         checkWin, 
         checkTie,
         getGameStatus,
-        resetGame
+        resetGame,
+        setPlayers
     };
 })();
 

@@ -1,13 +1,13 @@
 import { createGameboard } from './ui/gameboard.js';
 import { createCellClickListener } from './events/listeners.js';
-import { createNamesInterface, displayPlayersData, resetBoardButton } from './ui/interface.js';
+import { createNamesInterface, displayPlayerData, resetBoardButton, updateScore } from './ui/interface.js';
 
 const gameboard = createGameboard();
 
-const playersData = displayPlayersData('Player 1', 0);
-const playersData2 = displayPlayersData('Player 2', 0);
-document.body.appendChild(playersData2);
-document.body.appendChild(playersData);
+const player1Data = displayPlayerData('Player1', 0);
+const player2Data = displayPlayerData('Player2', 0);
+document.body.appendChild(player2Data);
+document.body.appendChild(player1Data);
 const resetBtn = resetBoardButton();
 document.body.appendChild(resetBtn);
 
