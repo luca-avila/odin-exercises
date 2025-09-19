@@ -71,12 +71,22 @@ function updateCell(row, column, value){
     cell.textContent = value;
 }
 
-function toggleHiddenState(){
-    // Change default hidden state to visible
-    const playerData = document.querySelector('.player-data');
-    const gameBoard = document.querySelector('#game-board');
+function setDefaultHiddenState(){
+    const playerData = document.querySelectorAll('.player-data');
+    const gameBoard = document.querySelector('.game-board');
     const resetBoardButton = document.querySelector('.reset-board-button');
-    playerData.classList.remove('hidden');
+    
+    playerData.forEach(player => player.classList.add('hidden'));
+    if (gameBoard) gameBoard.classList.add('hidden');
+    if (resetBoardButton) resetBoardButton.classList.add('hidden');
+}
+
+function toggleHiddenState(){   
+    // Change default hidden state to visible
+    const playerData = document.querySelectorAll('.player-data');
+    const gameBoard = document.querySelector('.game-board');
+    const resetBoardButton = document.querySelector('.reset-board-button');
+    playerData.forEach(player => player.classList.remove('hidden'));
     gameBoard.classList.remove('hidden');
     resetBoardButton.classList.remove('hidden');
 
@@ -85,4 +95,4 @@ function toggleHiddenState(){
     namesInterface.classList.add('hidden');
 }
 
-export { createNameInput, createNamesInterface, displayPlayerData, resetBoardButton, updateScore, updateCell, toggleHiddenState };
+export { createNameInput, createNamesInterface, displayPlayerData, resetBoardButton, updateScore, updateCell, toggleHiddenState, setDefaultHiddenState };
