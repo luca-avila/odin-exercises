@@ -7,22 +7,22 @@ function getBooksContainer(library) {
     for (const book of library) {
         const bookElement = document.createElement('div');
         bookElement.classList.add('book');
-        bookElement.dataset.id = book.id;
+        bookElement.dataset.id = book.getId();
 
         const name = document.createElement('h2');
-        name.textContent = book.name;
+        name.textContent = book.getName();
         name.classList.add('name');
 
         bookElement.appendChild(name);
 
         const author = document.createElement('p');
-        author.textContent = book.author;
+        author.textContent = book.getAuthor();
         author.classList.add('author');
         bookElement.appendChild(author);
 
         const pages = document.createElement('p');
-        if (book.pages) {
-            pages.textContent = book.pages;
+        if (book.getPages()) {
+            pages.textContent = book.getPages();
         } else {
             pages.textContent = 'Unknown';
         }
@@ -30,7 +30,7 @@ function getBooksContainer(library) {
         bookElement.appendChild(pages);
 
         const read = document.createElement('p');
-        if (book.read) {    
+        if (book.getRead()) {    
             read.textContent = 'Read';
         } else {
             read.textContent = 'Not Read';

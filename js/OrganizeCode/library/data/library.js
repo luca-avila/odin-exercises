@@ -8,12 +8,14 @@ function addBook(book) {
 }
 
 function removeBook(bookId) {
-    state.books = state.books.filter(b => b.id !== bookId);
+    state.books = state.books.filter(b => b.getId() !== bookId);
 }
 
 function toggleRead(bookId) {
     const book = findBook(bookId);
-    book.toggleRead(book);
+    if (book) {
+        book.toggleRead();
+    }
 }
 
 function getBooks() {
@@ -21,7 +23,7 @@ function getBooks() {
 }
 
 function findBook(bookId) {
-    return state.books.find(b => b.id === bookId);
+    return state.books.find(b => b.getId() === bookId);
 }
 
 export { addBook, removeBook, getBooks, findBook, toggleRead, state };
