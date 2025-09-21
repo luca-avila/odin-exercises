@@ -51,9 +51,9 @@ function setStartButtonListener() {
         // Create and display player data
         const player1Data = displayPlayerData(player1Name, 0);
         const player2Data = displayPlayerData(player2Name, 0);
-        const gameContainer = document.querySelector('.game-container');
-        gameContainer.appendChild(player1Data);
-        gameContainer.appendChild(player2Data);
+        const app = document.querySelector('.app');
+        app.appendChild(player1Data);
+        app.appendChild(player2Data);
         
         // Toggle hidden state
         toggleHiddenState();

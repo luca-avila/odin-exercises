@@ -7,17 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = document.createElement('div');
     app.classList.add('app');
     
-    const gameContainer = document.createElement('div');
-    gameContainer.classList.add('game-container');
-    
     const gameboard = createGameboard();
     const namesInterface = createNamesInterface();
     const resetBtn = resetBoardButton();
     
     document.body.appendChild(namesInterface);
     app.appendChild(resetBtn);
-    gameContainer.appendChild(gameboard);
-    app.appendChild(gameContainer);
+    app.appendChild(gameboard);
     document.body.appendChild(app);
     
     // Set default hidden state
