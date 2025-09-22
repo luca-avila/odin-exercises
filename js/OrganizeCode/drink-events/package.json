@@ -1,0 +1,12 @@
+{
+  "name": "drink-events",
+  "version": "1.0.0",
+  "description": "A modern drink events website built with Webpack, featuring tabbed navigation and dynamic content loading. This project demonstrates module bundling, ES6 modules, and modern JavaScript development practices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

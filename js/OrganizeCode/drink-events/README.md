@@ -1,6 +1,6 @@
 # Restaurant Page
 
-A modern restaurant website built with Webpack, featuring tabbed navigation and dynamic content loading. This project demonstrates module bundling, ES6 modules, and modern JavaScript development practices.
+A modern drink events website built with Webpack, featuring tabbed navigation and dynamic content loading. This project demonstrates module bundling, ES6 modules, and modern JavaScript development practices.
 
 ## 🎯 Learning Objectives
 
