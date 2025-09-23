@@ -1,3 +1,8 @@
+import event2Img from '../assets/event2.jpg';
+import event3Img from '../assets/event3.jpg';
+import event4Img from '../assets/event4.jpg';
+import event5Img from '../assets/event5.jpg';
+
 export function createEvents() {
     const eventsDiv = document.createElement('div');
 
@@ -13,6 +18,11 @@ export function createEvents() {
     event1Title.textContent = 'Wedding Bar Service';
     event1.appendChild(event1Title);
     
+    const event1Image = document.createElement('img');
+    event1Image.src = event1Img;
+    event1Image.alt = 'Event 1 Image';
+    event1.appendChild(event1Image);
+
     const event1Duration = document.createElement('p');
     const durationLabel = document.createElement('strong');
     durationLabel.textContent = 'Duration: ';
@@ -48,6 +58,11 @@ export function createEvents() {
     event2Title.textContent = 'Corporate Cocktail Hour';
     event2.appendChild(event2Title);
     
+    const event2Image = document.createElement('img');
+    event2Image.src = event2Img;
+    event2Image.alt = 'Event 2 Image';
+    event2.appendChild(event2Image);
+
     const event2Duration = document.createElement('p');
     const durationLabel2 = document.createElement('strong');
     durationLabel2.textContent = 'Duration: ';
@@ -83,6 +98,11 @@ export function createEvents() {
     event3Title.textContent = 'Birthday Party Bar';
     event3.appendChild(event3Title);
     
+    const event3Image = document.createElement('img');
+    event3Image.src = event3Img;
+    event3Image.alt = 'Event 3 Image';
+    event3.appendChild(event3Image);
+
     const event3Duration = document.createElement('p');
     const durationLabel3 = document.createElement('strong');
     durationLabel3.textContent = 'Duration: ';
@@ -118,6 +138,11 @@ export function createEvents() {
     event4Title.textContent = 'Holiday Party Catering';
     event4.appendChild(event4Title);
     
+    const event4Image = document.createElement('img');
+    event4Image.src = event4Img;
+    event4Image.alt = 'Event 4 Image';
+    event4.appendChild(event4Image);
+
     const event4Duration = document.createElement('p');
     const durationLabel4 = document.createElement('strong');
     durationLabel4.textContent = 'Duration: ';

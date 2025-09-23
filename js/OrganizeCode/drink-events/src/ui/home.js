@@ -1,3 +1,6 @@
+import cocktailImg from '../assets/cocktail.jpg';
+import event1Img from '../assets/event1.jpg';
+
 export function createHome() {
     const homeDiv = document.createElement('div');
     
@@ -5,6 +8,11 @@ export function createHome() {
     const title = document.createElement('h1');
     title.textContent = 'Forest Pour';
     homeDiv.appendChild(title);
+
+    const cocktailImage = document.createElement('img');
+    cocktailImage.src = cocktailImg;
+    cocktailImage.alt = 'Cocktail Image';
+    homeDiv.appendChild(cocktailImage);
 
     // Description
     const description = document.createElement('p');
@@ -18,6 +26,11 @@ export function createHome() {
     const featuredTitle = document.createElement('h2');
     featuredTitle.textContent = 'Featured Event';
     featuredEvent.appendChild(featuredTitle);
+
+    const event1Image = document.createElement('img');
+    event1Image.src = event1Img;
+    event1Image.alt = 'Event 1 Image';
+    featuredEvent.appendChild(event1Image);
 
     const eventTitle = document.createElement('h3');
     eventTitle.textContent = 'Wedding & Party Bar Service';
