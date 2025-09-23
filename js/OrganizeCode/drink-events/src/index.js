@@ -3,7 +3,7 @@ import './css/normalize.css';
 import './css/styles.css';
 
 // Import UI modules
-import { init, switchTab, appState } from './state/state.js';
+import { init, switchTab } from './state/state.js';
 
 
 const content = document.querySelector('#content');

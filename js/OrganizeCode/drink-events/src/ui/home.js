@@ -2,22 +2,26 @@ import cocktailImg from '../assets/cocktail.jpg';
 import event1Img from '../assets/event1.jpg';
 
 export function createHome() {
-    const homeDiv = document.createElement('div');
+    const homeContainer = document.createElement('div');
+    homeContainer.classList.add('home-container');
     
     // Title
+    const hero = document.createElement('div');
+    hero.classList.add('hero');
+    
     const title = document.createElement('h1');
     title.textContent = 'Forest Pour';
-    homeDiv.appendChild(title);
+    hero.appendChild(title);
 
     const cocktailImage = document.createElement('img');
     cocktailImage.src = cocktailImg;
     cocktailImage.alt = 'Cocktail Image';
-    homeDiv.appendChild(cocktailImage);
+    hero.appendChild(cocktailImage);
 
     // Description
     const description = document.createElement('p');
     description.textContent = 'Professional drink catering services for weddings, corporate events, and private parties. We bring the bar to you with custom cocktail menus and expert mixologists.';
-    homeDiv.appendChild(description);
+    hero.appendChild(description);
 
     // Featured Event (Hero)
     const featuredEvent = document.createElement('div');
@@ -44,7 +48,8 @@ export function createHome() {
     eventButton.textContent = 'Book Now';
     featuredEvent.appendChild(eventButton);
 
-    homeDiv.appendChild(featuredEvent);
+    homeContainer.appendChild(hero);
+    homeContainer.appendChild(featuredEvent);
 
-    return homeDiv;
+    return homeContainer;
 }

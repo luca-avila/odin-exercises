@@ -1,5 +1,6 @@
 export function createContact() {
     const contactDiv = document.createElement('div');
+    contactDiv.classList.add('contact-container');
 
     const title = document.createElement('h1');
     title.textContent = 'Get in touch';

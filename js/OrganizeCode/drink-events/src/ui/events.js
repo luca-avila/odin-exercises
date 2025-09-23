@@ -8,6 +8,7 @@ export function createEvents() {
 
     const title = document.createElement('h1');
     title.textContent = 'Our Events';
+    eventsDiv.classList.add('events-container');
     eventsDiv.appendChild(title);
 
     // Event 1

@@ -16,9 +16,20 @@ function switchTab(tabName) {
     const content = document.querySelector('#content');
     content.innerHTML = '';
     content.appendChild(appState.tabs[tabName]());
+    updateActiveTab();
 }
 
-export { appState, switchTab, init };
+function updateActiveTab() {
+    const tabs = document.querySelectorAll('#tabs li');
+    tabs.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.id === appState.currentTab + '-tab') {
+            tab.classList.add('active');
+        }
+    });
+}
+
+export { switchTab, init };
 
 function init() {
     switchTab('home');
