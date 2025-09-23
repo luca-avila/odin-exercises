@@ -2,7 +2,7 @@
 
 A modern drink events website built with Webpack, featuring tabbed navigation and dynamic content loading. This project demonstrates module bundling, ES6 modules, and modern JavaScript development practices.
 
-https://forst-pour.vercel.app/
+https://forest-pour.vercel.app/
 
 ## 🎯 Learning Objectives
 
