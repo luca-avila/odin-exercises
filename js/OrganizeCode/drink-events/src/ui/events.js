@@ -25,24 +25,18 @@ export function createEvents() {
     event1.appendChild(event1Image);
 
     const event1Duration = document.createElement('p');
-    const durationLabel = document.createElement('strong');
-    durationLabel.textContent = 'Duration: ';
-    event1Duration.appendChild(durationLabel);
-    event1Duration.appendChild(document.createTextNode('4-6 hours'));
+    event1Duration.textContent = '4-6 hours';
+    event1Duration.classList.add('event-duration');
     event1.appendChild(event1Duration);
     
     const event1Capacity = document.createElement('p');
-    const capacityLabel = document.createElement('strong');
-    capacityLabel.textContent = 'Capacity: ';
-    event1Capacity.appendChild(capacityLabel);
-    event1Capacity.appendChild(document.createTextNode('Up to 200 guests'));
+    event1Capacity.textContent = 'Up to 200 guests';
+    event1Capacity.classList.add('event-capacity');
     event1.appendChild(event1Capacity);
     
     const event1Price = document.createElement('p');
-    const priceLabel = document.createElement('strong');
-    priceLabel.textContent = 'Price: ';
-    event1Price.appendChild(priceLabel);
-    event1Price.appendChild(document.createTextNode('$800-1200'));
+    event1Price.textContent = '$800-1200';
+    event1Price.classList.add('event-price');
     event1.appendChild(event1Price);
     
     const event1Description = document.createElement('p');
@@ -65,24 +59,18 @@ export function createEvents() {
     event2.appendChild(event2Image);
 
     const event2Duration = document.createElement('p');
-    const durationLabel2 = document.createElement('strong');
-    durationLabel2.textContent = 'Duration: ';
-    event2Duration.appendChild(durationLabel2);
-    event2Duration.appendChild(document.createTextNode('2-3 hours'));
+    event2Duration.textContent = '2-3 hours';
+    event2Duration.classList.add('event-duration');
     event2.appendChild(event2Duration);
     
     const event2Capacity = document.createElement('p');
-    const capacityLabel2 = document.createElement('strong');
-    capacityLabel2.textContent = 'Capacity: ';
-    event2Capacity.appendChild(capacityLabel2);
-    event2Capacity.appendChild(document.createTextNode('Up to 100 guests'));
+    event2Capacity.textContent = 'Up to 100 guests';
+    event2Capacity.classList.add('event-capacity');
     event2.appendChild(event2Capacity);
     
     const event2Price = document.createElement('p');
-    const priceLabel2 = document.createElement('strong');
-    priceLabel2.textContent = 'Price: ';
-    event2Price.appendChild(priceLabel2);
-    event2Price.appendChild(document.createTextNode('$400-600'));
+    event2Price.textContent = '$400-600';
+    event2Price.classList.add('event-price');
     event2.appendChild(event2Price);
     
     const event2Description = document.createElement('p');
@@ -105,24 +93,18 @@ export function createEvents() {
     event3.appendChild(event3Image);
 
     const event3Duration = document.createElement('p');
-    const durationLabel3 = document.createElement('strong');
-    durationLabel3.textContent = 'Duration: ';
-    event3Duration.appendChild(durationLabel3);
-    event3Duration.appendChild(document.createTextNode('3-4 hours'));
+    event3Duration.textContent = '3-4 hours';
+    event3Duration.classList.add('event-duration');
     event3.appendChild(event3Duration);
     
     const event3Capacity = document.createElement('p');
-    const capacityLabel3 = document.createElement('strong');
-    capacityLabel3.textContent = 'Capacity: ';
-    event3Capacity.appendChild(capacityLabel3);
-    event3Capacity.appendChild(document.createTextNode('Up to 50 guests'));
+    event3Capacity.textContent = 'Up to 50 guests';
+    event3Capacity.classList.add('event-capacity');
     event3.appendChild(event3Capacity);
     
     const event3Price = document.createElement('p');
-    const priceLabel3 = document.createElement('strong');
-    priceLabel3.textContent = 'Price: ';
-    event3Price.appendChild(priceLabel3);
-    event3Price.appendChild(document.createTextNode('$300-500'));
+    event3Price.textContent = '$300-500';
+    event3Price.classList.add('event-price');
     event3.appendChild(event3Price);
     
     const event3Description = document.createElement('p');
@@ -145,24 +127,18 @@ export function createEvents() {
     event4.appendChild(event4Image);
 
     const event4Duration = document.createElement('p');
-    const durationLabel4 = document.createElement('strong');
-    durationLabel4.textContent = 'Duration: ';
-    event4Duration.appendChild(durationLabel4);
-    event4Duration.appendChild(document.createTextNode('4-5 hours'));
+    event4Duration.textContent = '4-5 hours';
+    event4Duration.classList.add('event-duration');
     event4.appendChild(event4Duration);
     
     const event4Capacity = document.createElement('p');
-    const capacityLabel4 = document.createElement('strong');
-    capacityLabel4.textContent = 'Capacity: ';
-    event4Capacity.appendChild(capacityLabel4);
-    event4Capacity.appendChild(document.createTextNode('Up to 150 guests'));
+    event4Capacity.textContent = 'Up to 150 guests';
+    event4Capacity.classList.add('event-capacity');
     event4.appendChild(event4Capacity);
     
     const event4Price = document.createElement('p');
-    const priceLabel4 = document.createElement('strong');
-    priceLabel4.textContent = 'Price: ';
-    event4Price.appendChild(priceLabel4);
-    event4Price.appendChild(document.createTextNode('$600-900'));
+    event4Price.textContent = '$600-900';
+    event4Price.classList.add('event-price');
     event4.appendChild(event4Price);
     
     const event4Description = document.createElement('p');
