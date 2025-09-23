@@ -19,7 +19,7 @@ export function createEvents() {
     event1.appendChild(event1Title);
     
     const event1Image = document.createElement('img');
-    event1Image.src = event1Img;
+    event1Image.src = event2Img;
     event1Image.alt = 'Event 1 Image';
     event1.appendChild(event1Image);
 
@@ -59,7 +59,7 @@ export function createEvents() {
     event2.appendChild(event2Title);
     
     const event2Image = document.createElement('img');
-    event2Image.src = event2Img;
+    event2Image.src = event3Img;
     event2Image.alt = 'Event 2 Image';
     event2.appendChild(event2Image);
 
@@ -99,7 +99,7 @@ export function createEvents() {
     event3.appendChild(event3Title);
     
     const event3Image = document.createElement('img');
-    event3Image.src = event3Img;
+    event3Image.src = event4Img;
     event3Image.alt = 'Event 3 Image';
     event3.appendChild(event3Image);
 
@@ -139,7 +139,7 @@ export function createEvents() {
     event4.appendChild(event4Title);
     
     const event4Image = document.createElement('img');
-    event4Image.src = event4Img;
+    event4Image.src = event5Img;
     event4Image.alt = 'Event 4 Image';
     event4.appendChild(event4Image);
 

@@ -3,12 +3,23 @@ import './css/normalize.css';
 import './css/styles.css';
 
 // Import UI modules
-import { createHome } from './ui/home.js';
-import { createEvents } from './ui/events.js';
-import { createContact } from './ui/contact.js';
+import { init, switchTab, appState } from './state/state.js';
 
 
-const home = createHome();
 const content = document.querySelector('#content');
+init();
 
-content.appendChild(home);
+const homeTab = document.querySelector('#home-tab');
+homeTab.addEventListener('click', () => {
+    switchTab('home');
+});
+
+const contactTab = document.querySelector('#contact-tab');
+contactTab.addEventListener('click', () => {
+    switchTab('contact');
+});
+
+const eventsTab = document.querySelector('#events-tab');
+eventsTab.addEventListener('click', () => {
+    switchTab('events');
+});
