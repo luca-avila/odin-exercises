@@ -1,4 +1,8 @@
-console.log('Webpack is working! Drink Events website loaded successfully!');
+// Import CSS files
+import './css/normalize.css';
+import './css/styles.css';
+
+// Import UI modules
 import { createHome } from './ui/home.js';
 import { createEvents } from './ui/events.js';
 import { createContact } from './ui/contact.js';
