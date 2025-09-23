@@ -20,6 +20,14 @@
   font-style: normal;
 }
 
+:root {
+    --dark-color: #0B0C0C;
+    --light-color: #E9EAEC;
+    --mid-color: #2A2E34;
+    --gold-color: #FBE134;
+    --dark-gold-color: #E4B61A;
+}
+
 /* Base Styles */
 img {
     width: 256px;
@@ -37,4 +45,30 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+li {
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 16px;
+}
+
+#tabs {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#tabs li {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
 }

@@ -9,5 +9,6 @@ import { createContact } from './ui/contact.js';
 
 
 const home = createHome();
+const content = document.querySelector('#content');
 
-document.body.appendChild(home);
+content.appendChild(home);
