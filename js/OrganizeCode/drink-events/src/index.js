@@ -5,8 +5,6 @@ import './css/styles.css';
 // Import UI modules
 import { init, switchTab } from './state/state.js';
 
-
-const content = document.querySelector('#content');
 init();
 
 const homeTab = document.querySelector('#home-tab');
