@@ -33,24 +33,28 @@ restaurant-page/
 ## 🎯 Assignment Requirements
 
 ### 1. **Project Setup**
+
 - ✅ Create `package.json` and configure Webpack
 - ✅ Set up `.gitignore` with `node_modules` and `dist`
 - ✅ Configure HTML skeleton with header, nav, and content div
 - ✅ Test JavaScript execution with `npx webpack serve`
 
 ### 2. **HTML Structure**
+
 - ✅ Header with navigation buttons (not links)
 - ✅ Tab buttons for "Home", "Menu", "Contact"
 - ✅ Single `<div id="content">` for dynamic content
 - ✅ Initial hardcoded content for testing
 
 ### 3. **JavaScript Implementation**
+
 - ✅ Remove hardcoded content from HTML
 - ✅ Create content dynamically with JavaScript
 - ✅ Separate module for initial page load
 - ✅ Import and call page load function in `index.js`
 
 ### 4. **Tabbed Navigation**
+
 - ✅ Each tab content in separate module
 - ✅ Modules export functions that create and style content
 - ✅ Tab-switching logic in `index.js`
@@ -58,6 +62,7 @@ restaurant-page/
 - ✅ Content clearing and repopulation on tab switch
 
 ### 5. **Deployment**
+
 - ✅ GitHub Pages deployment setup
 - ✅ `gh-pages` branch configuration
 - ✅ Build process with `npx webpack`
@@ -66,6 +71,7 @@ restaurant-page/
 ## 🚀 Getting Started
 
 ### Development
+
 ```bash
 # Install dependencies
 npm install
@@ -77,6 +83,7 @@ npx webpack serve
 ```
 
 ### Production Build
+
 ```bash
 # Build for production
 npx webpack
@@ -87,12 +94,14 @@ npx webpack
 ## 🧠 Key Learning Concepts
 
 ### **Webpack & Module Bundling**
+
 - **Entry Points**: Defining where the application starts
 - **Output Configuration**: Where built files are generated
 - **Loaders**: Processing different file types (HTML, CSS, JS)
 - **Development Server**: Hot reloading and local development
 
 ### **ES6 Modules**
+
 ```javascript
 // Exporting functions
 export function createHomePage() {
@@ -100,21 +109,23 @@ export function createHomePage() {
 }
 
 // Importing modules
-import { createHomePage } from './home.js';
+import { createHomePage } from "./home.js";
 ```
 
 ### **Dynamic Content Loading**
+
 - **Single Page Application**: Changing content without page reload
 - **DOM Manipulation**: Creating and appending elements dynamically
 - **Event Delegation**: Handling navigation events
 - **Content Management**: Clearing and repopulating content areas
 
 ### **Tabbed Navigation Pattern**
+
 ```javascript
 // Tab switching logic
 function switchTab(tabFunction) {
-  const content = document.getElementById('content');
-  content.innerHTML = ''; // Clear content
+  const content = document.getElementById("content");
+  content.innerHTML = ""; // Clear content
   content.appendChild(tabFunction()); // Add new content
 }
 ```
@@ -122,18 +133,21 @@ function switchTab(tabFunction) {
 ## 📚 Technical Implementation
 
 ### **Webpack Configuration**
+
 - HTML template processing
 - JavaScript bundling and minification
 - Development server with hot reloading
 - Production build optimization
 
 ### **Module Architecture**
+
 - **Separation of Concerns**: Each tab in its own module
 - **Reusable Functions**: Content creation functions
 - **Clean Imports**: Organized module dependencies
 - **Maintainable Code**: Easy to add new tabs or modify existing ones
 
 ### **Deployment Strategy**
+
 - **GitHub Pages**: Static site hosting
 - **Branch-based Deployment**: `gh-pages` branch for built files
 - **Automated Workflow**: Build and deploy process
@@ -149,4 +163,4 @@ function switchTab(tabFunction) {
 
 ---
 
-*This project is part of The Odin Project curriculum, focusing on modern JavaScript development tools and deployment practices.*
+_This project is part of The Odin Project curriculum, focusing on modern JavaScript development tools and deployment practices._

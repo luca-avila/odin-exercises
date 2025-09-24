@@ -1,48 +1,55 @@
 /* Roboto Font Faces */
 @font-face {
-  font-family: 'Roboto';
-  src: url('../assets/Roboto-Light.woff2') format('woff2');
+  font-family: "Roboto";
+  src: url("../assets/Roboto-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('../assets/Roboto-Regular.woff2') format('woff2');
+  font-family: "Roboto";
+  src: url("../assets/Roboto-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('../assets/Roboto-Bold.woff2') format('woff2');
+  font-family: "Roboto";
+  src: url("../assets/Roboto-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 
 :root {
-    --dark-color: #0B0C0C;
-    --light-color: #E9EAEC;
-    --mid-color: #2A2E34;
-    --gold-color: #FBE134;
-    --dark-gold-color: #E4B61A;
+  --dark-color: #0b0c0c;
+  --light-color: #e9eaec;
+  --mid-color: #2a2e34;
+  --gold-color: #fbe134;
+  --dark-gold-color: #e4b61a;
 }
 
 /* Base Styles */
 img {
-    width: 256px;
+  width: 256px;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--dark-color);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 700;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--light-color);
 }
 
@@ -51,13 +58,13 @@ p {
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 li {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #content {
@@ -69,14 +76,14 @@ li {
 
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    padding: 16px;
-    box-shadow: 0 4px 8px black;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 16px;
+  box-shadow: 0 4px 8px black;
+  margin-bottom: 20px;
 }
 
 #logo {
@@ -103,7 +110,6 @@ header {
   font-size: 16px;
   cursor: pointer;
 }
-
 
 #tabs li.active {
   border-bottom: 3px solid var(--gold-color);
@@ -314,12 +320,12 @@ button:hover {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .event-card img {
     grid-row: auto;
     height: 180px;
   }
-  
+
   .events-container h1 {
     font-size: 2rem;
   }
@@ -471,18 +477,18 @@ button:hover {
   .contact-info {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-item {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .hours-item {
     flex-direction: column;
     gap: 8px;
     text-align: center;
   }
-  
+
   .contact-container h1 {
     font-size: 2rem;
   }
@@ -575,37 +581,37 @@ button:hover {
   .home-container {
     padding: 16px;
   }
-  
+
   .hero h1 {
     font-size: 2.2rem;
     margin-bottom: 20px;
   }
-  
+
   .hero .image-container img {
     height: 200px;
   }
-  
+
   .hero .image-container figcaption {
     font-size: 1rem;
     margin-top: 12px;
   }
-  
+
   .featured-event {
     padding: 24px 20px;
   }
-  
+
   .featured-event h2 {
     font-size: 1.5rem;
   }
-  
+
   .featured-event .image-container img {
     height: 180px;
   }
-  
+
   .featured-event .image-container figcaption {
     font-size: 0.95rem;
   }
-  
+
   .featured-event button {
     padding: 12px 24px;
     font-size: 1rem;
@@ -616,19 +622,19 @@ button:hover {
   .hero h1 {
     font-size: 1.8rem;
   }
-  
+
   .hero .image-container img {
     height: 160px;
   }
-  
+
   .featured-event {
     padding: 20px 16px;
   }
-  
+
   .featured-event h2 {
     font-size: 1.3rem;
   }
-  
+
   .featured-event .image-container img {
     height: 150px;
   }
