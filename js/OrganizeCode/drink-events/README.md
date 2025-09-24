@@ -105,11 +105,11 @@ npx webpack
 ```javascript
 // Exporting functions
 export function createHomePage() {
-  // Module content
+    // Module content
 }
 
 // Importing modules
-import { createHomePage } from "./home.js";
+import { createHomePage } from './home.js';
 ```
 
 ### **Dynamic Content Loading**
@@ -124,9 +124,9 @@ import { createHomePage } from "./home.js";
 ```javascript
 // Tab switching logic
 function switchTab(tabFunction) {
-  const content = document.getElementById("content");
-  content.innerHTML = ""; // Clear content
-  content.appendChild(tabFunction()); // Add new content
+    const content = document.getElementById('content');
+    content.innerHTML = ''; // Clear content
+    content.appendChild(tabFunction()); // Add new content
 }
 ```
 
