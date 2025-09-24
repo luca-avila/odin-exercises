@@ -1,6 +1,6 @@
 import { handleFormSubmit, handleBookButton } from './events/listeners.js';
 import { createBookForm } from './ui/form.js';
-import { addBook, state } from './data/library.js';
+import { addBook, storage } from './data/library.js';
 import { getBooksContainer, render } from './ui/render.js';
 import { Book } from './models/book.js';
 
@@ -10,17 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayFormButton = document.querySelector('.display-form');
     const form = createBookForm();
 
-    // Create sample books
-    const sampleBooks = [
-        new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false),
-        new Book("1984", "George Orwell", 328, true),
-        new Book("To Kill a Mockingbird", "Harper Lee", 281, false),
-        new Book("Pride and Prejudice", "Jane Austen", 432, true),
-        new Book("The Catcher in the Rye", "J.D. Salinger", 277, false)
-    ];
-    
-    // Add sample books to library
-    sampleBooks.forEach(book => addBook(book));
+    // Create sample books only if localStorage is empty
+    if (storage.books.length === 0) {
+        const sampleBooks = [
+            new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, false),
+            new Book("1984", "George Orwell", 328, true),
+            new Book("To Kill a Mockingbird", "Harper Lee", 281, false),
+            new Book("Pride and Prejudice", "Jane Austen", 432, true),
+            new Book("The Catcher in the Rye", "J.D. Salinger", 277, false)
+        ];
+        
+        // Add sample books to library
+        sampleBooks.forEach(book => addBook(book));
+    }
     
     // Add form to app
     app.appendChild(form);
@@ -34,11 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // Create new library with current state
-        const library = getBooksContainer(state.books);
+        const library = getBooksContainer(storage.books);
         app.appendChild(library);
         
         // Render current state
-        render(state, form, library, displayFormButton);
+        render(storage, form, library, displayFormButton);
     }
 
     // Initial display
@@ -48,14 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (event) => {
         handleFormSubmit(event);
         // Return to library view and update display
-        state.view = 'library';
+        storage.view = 'library';
         updateLibraryDisplay();
     });
     
     displayFormButton.addEventListener('click', () => {
-        state.view = 'form';
+        storage.view = 'form';
         const currentLibrary = app.querySelector('.library');
-        render(state, form, currentLibrary, displayFormButton);
+        render(storage, form, currentLibrary, displayFormButton);
+    });
+
+    // Add back button event listener
+    const backButton = form.querySelector('#back-to-library');
+    backButton.addEventListener('click', () => {
+        storage.view = 'library';
+        updateLibraryDisplay();
     });
 
     // Add event delegation for remove/toggle buttons

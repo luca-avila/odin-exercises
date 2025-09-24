@@ -157,6 +157,17 @@ button:hover {
     margin-right: 0.5rem;
 }
 
+.back-button {
+    background-color: var(--brown-primary) !important;
+    margin-top: 1rem !important;
+    width: 100% !important;
+}
+
+.back-button:hover {
+    background-color: var(--brow-dark) !important;
+    transform: scale(1.05);
+}
+
 .hidden {
     display: none;
 }

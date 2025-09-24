@@ -49,6 +49,13 @@ function createBookForm() {
     submitButton.textContent = 'Submit';
     form.appendChild(submitButton);
 
+    const backButton = document.createElement('button');
+    backButton.type = 'button'; // Prevent form submission
+    backButton.id = 'back-to-library';
+    backButton.textContent = 'Back to Library';
+    backButton.classList.add('back-button');
+    form.appendChild(backButton);
+
     return form;
 }
 
