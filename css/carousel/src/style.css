@@ -1,0 +1,23 @@
+/* Basic carousel styles */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.carousel {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 6fr 1fr;
+  gap: 100px;
+}
+
+.current-img {
+  width: 500px;
+  height: 500px;
+}
+
+.hidden {
+  display: none;
+}
