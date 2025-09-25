@@ -1,0 +1,38 @@
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f0f0;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.element {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.element:hover {
+  background-color: gray;
+}
+
+.hidden {
+  display: none;
+}
