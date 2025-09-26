@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 20px;
   font-family: Arial, sans-serif;
+  background-color: beige;
 }
 
 .carousel {
@@ -20,4 +21,19 @@ body {
 
 .hidden {
   display: none;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: green;
 }

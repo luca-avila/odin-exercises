@@ -160,13 +160,36 @@ function addEventListeners() {
     clearClasses(state.images);
     moveStateIndexBack();
     carouselLoop('previous');
+    updateDots();
   });
 
   nextButton.addEventListener('click', () => {
     clearClasses(state.images);
     moveStateIndex();
     carouselLoop('next');
+    updateDots();
   });
+}
+
+function displayDots() {
+  for (let i = 0; i < state.totalImages; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    dot.dataset.index = i;
+    if (i === state.currentIndex) {
+      dot.classList.add('active');
+    }
+    document.body.appendChild(dot);
+  }
+}
+
+function updateDots() {
+  for (let dot of document.querySelectorAll('.dot')) {
+    dot.classList.remove('active');
+  }
+  document
+    .querySelector(`.dot[data-index="${state.currentIndex}"]`)
+    .classList.add('active');
 }
 
 const carousel = createCarouselElements();
@@ -179,4 +202,5 @@ setTimeout(() => {
   displayShownImages(state.images);
   positionIndexImage(state.images);
   expandIndexImage(state.images);
+  displayDots();
 }, 1000);
