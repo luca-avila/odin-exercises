@@ -135,6 +135,15 @@ function carouselLoop(buttonType) {
   expandIndexImage(state.images);
 }
 
+function carouselLoopDot(dotType) {
+  const carousel = document.querySelector('.carousel');
+  carousel.innerHTML = '';
+  clearClasses(state.images);
+  displayShownImages(state.images);
+  positionIndexImage(state.images);
+  expandIndexImage(state.images);
+}
+
 function addButtons() {
   const buttons = document.createElement('div');
   buttons.classList.add('buttons');
@@ -192,10 +201,21 @@ function updateDots() {
     .classList.add('active');
 }
 
+function addDotEventListeners() {
+  for (let dot of document.querySelectorAll('.dot')) {
+    dot.addEventListener('click', () => {
+      state.currentIndex = parseInt(dot.dataset.index);
+      carouselLoopDot('dot');
+      updateDots();
+    });
+  }
+}
+
 const carousel = createCarouselElements();
 document.body.appendChild(carousel);
 document.body.appendChild(addButtons());
 addEventListeners();
+addDotEventListeners();
 
 setTimeout(() => {
   addImagesIndex(state.images);
@@ -203,4 +223,5 @@ setTimeout(() => {
   positionIndexImage(state.images);
   expandIndexImage(state.images);
   displayDots();
+  addDotEventListeners();
 }, 1000);
