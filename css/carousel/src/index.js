@@ -35,6 +35,14 @@ function moveStateIndex() {
   }
 }
 
+function moveStateIndexBack() {
+  if (state.currentIndex === 0) {
+    state.currentIndex = 4;
+  } else {
+    state.currentIndex--;
+  }
+}
+
 // Hide images to show only 3 images
 function hideImages(imagesArr) {
   for (let image of imagesArr) {
@@ -70,10 +78,29 @@ function clearClasses(imagesArr) {
 }
 
 function positionIndexImage(imagesArr) {
+  // Calculate previous and next indices
+  const prevIndex = state.currentIndex === 0 ? 4 : state.currentIndex - 1;
+  const nextIndex = state.currentIndex === 4 ? 0 : state.currentIndex + 1;
+
   for (let image of imagesArr) {
-    if (parseInt(image.dataset.index) === state.currentIndex) {
+    const imageIndex = parseInt(image.dataset.index);
+
+    if (imageIndex === prevIndex) {
+      // Position previous image on the left (column 1)
+      image.style.gridColumnStart = '1';
+      image.style.gridColumnEnd = '2';
+      image.style.gridRowStart = '1';
+      image.style.gridRowEnd = '2';
+    } else if (imageIndex === state.currentIndex) {
+      // Position current image in the center (column 2)
       image.style.gridColumnStart = '2';
       image.style.gridColumnEnd = '3';
+      image.style.gridRowStart = '1';
+      image.style.gridRowEnd = '2';
+    } else if (imageIndex === nextIndex) {
+      // Position next image on the right (column 3)
+      image.style.gridColumnStart = '3';
+      image.style.gridColumnEnd = '4';
       image.style.gridRowStart = '1';
       image.style.gridRowEnd = '2';
     }
@@ -83,43 +110,73 @@ function positionIndexImage(imagesArr) {
 function displayShownImages(imagesArr) {
   const carousel = document.querySelector('.carousel');
 
+  // Calculate previous and next indices
+  const prevIndex = state.currentIndex === 0 ? 4 : state.currentIndex - 1;
+  const nextIndex = state.currentIndex === 4 ? 0 : state.currentIndex + 1;
+
   for (let image of imagesArr) {
     const imageIndex = parseInt(image.dataset.index);
-
-    // Show only the current image and the 2 adjacent ones
+    // Show only current, previous, and next images
     if (
-      Math.abs(imageIndex - state.currentIndex) <= 1 ||
-      (state.currentIndex === 0 && imageIndex === 4) ||
-      (state.currentIndex === 4 && imageIndex === 0)
+      imageIndex === state.currentIndex ||
+      imageIndex === prevIndex ||
+      imageIndex === nextIndex
     ) {
       carousel.appendChild(image);
     }
   }
 }
 
-const carousel = createCarouselElements();
-document.body.appendChild(carousel);
-
-function startCarousel() {
-  addImagesIndex(state.images);
-
-  function carouselLoop(iterationCount = 0) {
-    if (iterationCount >= 10) return;
-    const carousel = document.querySelector('.carousel');
-    carousel.innerHTML = '';
-    displayShownImages(state.images);
-    positionIndexImage(state.images);
-    expandIndexImage(state.images);
-    setTimeout(() => {
-      clearClasses(state.images);
-      moveStateIndex();
-      carouselLoop(iterationCount + 1);
-    }, 4000);
-  }
-
-  carouselLoop();
+function carouselLoop(buttonType) {
+  const carousel = document.querySelector('.carousel');
+  carousel.innerHTML = '';
+  displayShownImages(state.images);
+  positionIndexImage(state.images);
+  expandIndexImage(state.images);
 }
 
+function addButtons() {
+  const buttons = document.createElement('div');
+  buttons.classList.add('buttons');
+
+  const previousButton = document.createElement('button');
+  previousButton.textContent = 'Previous';
+  previousButton.classList.add('previous');
+  buttons.appendChild(previousButton);
+
+  const nextButton = document.createElement('button');
+  nextButton.textContent = 'Next';
+  nextButton.classList.add('next');
+  buttons.appendChild(nextButton);
+
+  return buttons;
+}
+
+function addEventListeners() {
+  const previousButton = document.querySelector('.previous');
+  const nextButton = document.querySelector('.next');
+
+  previousButton.addEventListener('click', () => {
+    clearClasses(state.images);
+    moveStateIndexBack();
+    carouselLoop('previous');
+  });
+
+  nextButton.addEventListener('click', () => {
+    clearClasses(state.images);
+    moveStateIndex();
+    carouselLoop('next');
+  });
+}
+
+const carousel = createCarouselElements();
+document.body.appendChild(carousel);
+document.body.appendChild(addButtons());
+addEventListeners();
+
 setTimeout(() => {
-  startCarousel();
+  addImagesIndex(state.images);
+  displayShownImages(state.images);
+  positionIndexImage(state.images);
+  expandIndexImage(state.images);
 }, 1000);
