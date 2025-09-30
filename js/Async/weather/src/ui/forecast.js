@@ -48,7 +48,7 @@ function createForecast(days) {
     }
 
     const backButton = document.createElement('button');
-    backButton.id = 'back-button';
+    backButton.id = 'back-to-home-button';
     backButton.textContent = 'Back';
     forecast.appendChild(backButton);
 

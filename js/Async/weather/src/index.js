@@ -1,5 +1,6 @@
 import './css/style.css';
 import { state } from './state/state';
+import { setListeners } from './events/listeners';
 
 const form = state.createForm();
 document.body.appendChild(form);
@@ -16,9 +17,5 @@ form.addEventListener('submit', async event => {
         console.error('Failed to load weather:', error);
     }
 
-    const forecastButton = document.querySelector('#forecast-button');
-    forecastButton.addEventListener('click', () => {
-        document.body.innerHTML = '';
-        document.body.appendChild(state.forecast);
-    });
+    setListeners(state);
 });
