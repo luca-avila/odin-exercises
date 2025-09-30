@@ -46,6 +46,12 @@ function createForecast(days) {
         const dayCard = createDayCard(day);
         forecast.appendChild(dayCard);
     }
+
+    const backButton = document.createElement('button');
+    backButton.id = 'back-button';
+    backButton.textContent = 'Back';
+    forecast.appendChild(backButton);
+
     return forecast;
 }
 

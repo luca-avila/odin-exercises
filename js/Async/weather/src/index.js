@@ -1,16 +1,24 @@
 import './css/style.css';
-import { createForm, createHome } from './ui/ui';
+import { state } from './state/state';
 
-async function testGetWeather(city) {
-    const home = await createHome(city);
-    document.body.appendChild(home);
-}
-
-const form = createForm();
+const form = state.createForm();
 document.body.appendChild(form);
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', async event => {
     event.preventDefault();
     const city = event.target.querySelector('#city').value;
-    testGetWeather(city);
+
+    try {
+        await state.loadWeather(city);
+        document.body.innerHTML = '';
+        document.body.appendChild(state.home);
+    } catch (error) {
+        console.error('Failed to load weather:', error);
+    }
+
+    const forecastButton = document.querySelector('#forecast-button');
+    forecastButton.addEventListener('click', () => {
+        document.body.innerHTML = '';
+        document.body.appendChild(state.forecast);
+    });
 });

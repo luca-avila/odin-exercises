@@ -43,8 +43,7 @@ function createCurrentDayCard(day) {
     return card;
 }
 
-async function createHome(city) {
-    const weather = await getWeather(city);
+function createHome(weather) {
     const home = document.createElement('div');
     home.id = 'home';
 
@@ -59,6 +58,11 @@ async function createHome(city) {
     forecastButton.id = 'forecast-button';
     forecastButton.textContent = 'Forecast';
     home.appendChild(forecastButton);
+
+    const backButton = document.createElement('button');
+    backButton.id = 'back-button';
+    backButton.textContent = 'Back';
+    home.appendChild(backButton);
 
     return home;
 }
