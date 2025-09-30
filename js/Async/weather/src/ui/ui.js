@@ -6,3 +6,4 @@ export {
     createIcon,
 } from './currentWeather.js';
 export { createDayCard, createForecast } from './forecast.js';
+export { clearApp } from '../utils/helpers.js';

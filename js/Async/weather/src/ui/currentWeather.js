@@ -51,6 +51,10 @@ function createHome(weather) {
     cityName.textContent = weather.resolvedAddress;
     home.appendChild(cityName);
 
+    const timezone = document.createElement('h2');
+    timezone.textContent = weather.timezone;
+    home.appendChild(timezone);
+
     const currentDayCard = createCurrentDayCard(weather.currentConditions);
     home.appendChild(currentDayCard);
 

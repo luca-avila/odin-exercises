@@ -3,13 +3,14 @@ async function getWeather(city) {
     const route = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=${API_KEY}`;
     const response = await fetch(route);
     const weather = await response.json();
-
+    console.log(weather);
     return formatJSON(weather);
 }
 
 function formatJSON(json) {
     const weatheObj = {
         resolvedAddress: json['resolvedAddress'],
+        timezone: json['timezone'],
         currentConditions: {
             conditions: json['currentConditions']['conditions'],
             cloudCover: json['currentConditions']['cloudcover'],

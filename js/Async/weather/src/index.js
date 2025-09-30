@@ -1,21 +1,28 @@
 import './css/style.css';
 import { state } from './state/state';
 import { setListeners } from './events/listeners';
+import { clearApp } from './ui/ui.js';
+
+// Helper function to add form listener
+function addFormListener(form, state) {
+    form.addEventListener('submit', async event => {
+        event.preventDefault();
+        const city = event.target.querySelector('#city').value;
+
+        try {
+            await state.loadWeather(city);
+            clearApp();
+            const app = document.querySelector('#app');
+            app.appendChild(state.home);
+            setListeners(state);
+        } catch (error) {
+            console.error('Failed to load weather:', error);
+        }
+    });
+}
 
 const form = state.createForm();
-document.body.appendChild(form);
+const app = document.querySelector('#app');
+app.appendChild(form);
 
-form.addEventListener('submit', async event => {
-    event.preventDefault();
-    const city = event.target.querySelector('#city').value;
-
-    try {
-        await state.loadWeather(city);
-        document.body.innerHTML = '';
-        document.body.appendChild(state.home);
-    } catch (error) {
-        console.error('Failed to load weather:', error);
-    }
-
-    setListeners(state);
-});
+addFormListener(form, state);
