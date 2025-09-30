@@ -39,20 +39,77 @@ function createDayCard(day) {
 }
 
 function createForecast(days) {
+    // Carousel forecast
     const forecast = document.createElement('div');
-    forecast.id = 'forecast';
+    forecast.classList.add('forecast');
+
+    const carousel = document.createElement('div');
+    carousel.classList.add('carousel');
+    forecast.appendChild(carousel);
 
     for (const day of days) {
         const dayCard = createDayCard(day);
-        forecast.appendChild(dayCard);
+        carousel.appendChild(dayCard);
     }
+
+    const buttons = document.createElement('div');
+    buttons.classList.add('buttons');
+    forecast.appendChild(buttons);
+
+    const prevButton = document.createElement('button');
+    prevButton.id = 'prev-button';
+    prevButton.textContent = 'Prev';
+    buttons.appendChild(prevButton);
 
     const backButton = document.createElement('button');
     backButton.id = 'back-to-home-button';
     backButton.textContent = 'Back';
-    forecast.appendChild(backButton);
+    buttons.appendChild(backButton);
+
+    const nextButton = document.createElement('button');
+    nextButton.id = 'next-button';
+    nextButton.textContent = 'Next';
+    buttons.appendChild(nextButton);
+
+    // Store carousel state and methods
+    forecast.currentIndex = 0;
+    forecast.totalDays = days.length;
+    forecast.carousel = carousel;
+    forecast.prevButton = prevButton;
+    forecast.nextButton = nextButton;
+
+    // Initialize carousel
+    updateCarouselPosition(forecast);
+    updateButtonStates(forecast);
 
     return forecast;
 }
 
-export { createDayCard, createForecast };
+function updateCarouselPosition(forecast) {
+    const translateX = -forecast.currentIndex * 100;
+    forecast.carousel.style.transform = `translateX(${translateX}%)`;
+}
+
+function updateButtonStates(forecast) {
+    forecast.prevButton.disabled = forecast.currentIndex === 0;
+    forecast.nextButton.disabled =
+        forecast.currentIndex === forecast.totalDays - 1;
+}
+
+function nextDay(forecast) {
+    if (forecast.currentIndex < forecast.totalDays - 1) {
+        forecast.currentIndex++;
+        updateCarouselPosition(forecast);
+        updateButtonStates(forecast);
+    }
+}
+
+function prevDay(forecast) {
+    if (forecast.currentIndex > 0) {
+        forecast.currentIndex--;
+        updateCarouselPosition(forecast);
+        updateButtonStates(forecast);
+    }
+}
+
+export { createDayCard, createForecast, nextDay, prevDay };

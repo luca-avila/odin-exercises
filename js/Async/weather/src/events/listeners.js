@@ -1,4 +1,5 @@
 import { clearApp } from '../ui/ui.js';
+import { nextDay, prevDay } from '../ui/forecast.js';
 
 export function setListeners(state) {
     const backToHomeButton = state.forecast.querySelector(
@@ -27,6 +28,18 @@ export function setListeners(state) {
     forecastButton.addEventListener('click', () => {
         clearApp();
         app.appendChild(state.forecast);
+    });
+
+    // Carousel navigation
+    const prevButton = state.forecast.querySelector('#prev-button');
+    const nextButton = state.forecast.querySelector('#next-button');
+
+    prevButton.addEventListener('click', () => {
+        prevDay(state.forecast);
+    });
+
+    nextButton.addEventListener('click', () => {
+        nextDay(state.forecast);
     });
 }
 
