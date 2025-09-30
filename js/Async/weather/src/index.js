@@ -1,14 +1,16 @@
-import { getWeather } from './api/weatherAPI';
-import { createDayCard } from './ui/ui';
+import './css/style.css';
+import { createForm, createHome } from './ui/ui';
 
-async function testGetWeatgher() {
-    const myweather = await getWeather('Buenos Aires');
-    console.log(myweather);
-    const address = document.createElement('h1');
-    address.textContent = myweather.resolvedAddress;
-    document.body.appendChild(address);
-    const dayCard = createDayCard(myweather.forecast.days[1]);
-    document.body.appendChild(dayCard);
+async function testGetWeather(city) {
+    const home = await createHome(city);
+    document.body.appendChild(home);
 }
 
-testGetWeatgher();
+const form = createForm();
+document.body.appendChild(form);
+
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    const city = event.target.querySelector('#city').value;
+    testGetWeather(city);
+});

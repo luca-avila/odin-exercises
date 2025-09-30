@@ -16,7 +16,7 @@ function formatJSON(json) {
             humidity: json['currentConditions']['humidity'],
             temp: json['currentConditions']['temp'],
             precipprob: json['currentConditions']['precipprob'],
-            temp: json['currentConditions']['temp'],
+            icon: json['currentConditions']['icon'],
         },
         forecast: {
             days: json['days'].map(day => formatDay(day)),
