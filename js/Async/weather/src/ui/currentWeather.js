@@ -25,19 +25,30 @@ function createCurrentDayCard(day) {
     card.appendChild(conditions);
 
     const temp = document.createElement('h2');
-    temp.textContent = day.temp;
+    temp.textContent = day.temp + '°F';
     card.appendChild(temp);
 
-    const cloudCover = document.createElement('h2');
-    cloudCover.textContent = day.cloudCover;
+    const cloudCover = document.createElement('p');
+    const cloudCoverSpan = document.createElement('span');
+    cloudCoverSpan.textContent = day.cloudCover + '%';
+    cloudCover.appendChild(cloudCoverSpan);
+    cloudCover.appendChild(document.createTextNode(' cloud cover'));
     card.appendChild(cloudCover);
 
-    const humidity = document.createElement('h2');
-    humidity.textContent = day.humidity;
+    const humidity = document.createElement('p');
+    const humiditySpan = document.createElement('span');
+    humiditySpan.textContent = day.humidity + '%';
+    humidity.appendChild(humiditySpan);
+    humidity.appendChild(document.createTextNode(' humidity'));
     card.appendChild(humidity);
 
-    const precipprob = document.createElement('h2');
-    precipprob.textContent = day.precipprob;
+    const precipprob = document.createElement('p');
+    const precipspan = document.createElement('span');
+    precipspan.textContent = day.precipprob + '%';
+    precipprob.appendChild(precipspan);
+    precipprob.appendChild(
+        document.createTextNode(' precipitation probability')
+    );
     card.appendChild(precipprob);
 
     return card;
@@ -51,7 +62,7 @@ function createHome(weather) {
     cityName.textContent = weather.resolvedAddress;
     home.appendChild(cityName);
 
-    const timezone = document.createElement('h2');
+    const timezone = document.createElement('p');
     timezone.textContent = weather.timezone;
     home.appendChild(timezone);
 

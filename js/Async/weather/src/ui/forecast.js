@@ -15,24 +15,39 @@ function createDayCard(day) {
     conditions.textContent = day.conditions;
     card.appendChild(conditions);
 
-    const cloudCover = document.createElement('h2');
-    cloudCover.textContent = day.cloudCover;
+    const cloudCover = document.createElement('p');
+    const cloudCoverSpan = document.createElement('span');
+    cloudCoverSpan.textContent = day.cloudCover + '%';
+    cloudCover.appendChild(cloudCoverSpan);
+    cloudCover.appendChild(document.createTextNode(' cloud cover'));
     card.appendChild(cloudCover);
 
-    const humidity = document.createElement('h2');
-    humidity.textContent = day.humidity;
+    const humidity = document.createElement('p');
+    const humiditySpan = document.createElement('span');
+    humiditySpan.textContent = day.humidity + '%';
+    humidity.appendChild(humiditySpan);
+    humidity.appendChild(document.createTextNode(' humidity'));
     card.appendChild(humidity);
 
-    const precipprob = document.createElement('h2');
-    precipprob.textContent = day.precipprob;
+    const precipprob = document.createElement('p');
+    const precipspan = document.createElement('span');
+    precipspan.textContent = day.precipprob + '%';
+    precipprob.appendChild(precipspan);
+    precipprob.appendChild(document.createTextNode(' precipitation probability'));
     card.appendChild(precipprob);
 
-    const tempmax = document.createElement('h2');
-    tempmax.textContent = day.tempmax;
+    const tempmax = document.createElement('p');
+    const tempmaxSpan = document.createElement('span');
+    tempmaxSpan.textContent = day.tempmax + '°F';
+    tempmax.appendChild(tempmaxSpan);
+    tempmax.appendChild(document.createTextNode(' high'));
     card.appendChild(tempmax);
 
-    const tempmin = document.createElement('h2');
-    tempmin.textContent = day.tempmin;
+    const tempmin = document.createElement('p');
+    const tempminSpan = document.createElement('span');
+    tempminSpan.textContent = day.tempmin + '°F';
+    tempmin.appendChild(tempminSpan);
+    tempmin.appendChild(document.createTextNode(' low'));
     card.appendChild(tempmin);
 
     return card;

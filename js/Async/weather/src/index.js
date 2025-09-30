@@ -1,3 +1,4 @@
+import './css/normalize.css';
 import './css/style.css';
 import { state } from './state/state';
 import { setListeners } from './events/listeners';
