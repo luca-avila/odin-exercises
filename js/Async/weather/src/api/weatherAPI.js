@@ -27,12 +27,14 @@ function formatJSON(json) {
 
 function formatDay(day) {
     const dayObj = {
+        date: day['datetime'],
         conditions: day['conditions'],
         cloudCover: day['cloudcover'],
         humidity: day['humidity'],
         precipprob: day['precipprob'],
         tempmax: day['tempmax'],
         tempmin: day['tempmin'],
+        icon: day['icon'],
     };
     return dayObj;
 }
