@@ -33,7 +33,9 @@ function createDayCard(day) {
     const precipspan = document.createElement('span');
     precipspan.textContent = day.precipprob + '%';
     precipprob.appendChild(precipspan);
-    precipprob.appendChild(document.createTextNode(' precipitation probability'));
+    precipprob.appendChild(
+        document.createTextNode(' precipitation probability')
+    );
     card.appendChild(precipprob);
 
     const tempmax = document.createElement('p');

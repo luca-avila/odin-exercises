@@ -69,15 +69,19 @@ function createHome(weather) {
     const currentDayCard = createCurrentDayCard(weather.currentConditions);
     home.appendChild(currentDayCard);
 
+    const buttons = document.createElement('div');
+    buttons.classList.add('buttons');
+    home.appendChild(buttons);
+
     const forecastButton = document.createElement('button');
     forecastButton.id = 'forecast-button';
     forecastButton.textContent = 'Forecast';
-    home.appendChild(forecastButton);
+    buttons.appendChild(forecastButton);
 
     const backButton = document.createElement('button');
     backButton.id = 'back-button';
     backButton.textContent = 'Back';
-    home.appendChild(backButton);
+    buttons.appendChild(backButton);
 
     return home;
 }

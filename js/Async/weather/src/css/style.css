@@ -42,7 +42,6 @@ body {
     align-items: stretch;
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
-    gap: 10px;
     width: 100vw;
     height: 100%;
     font-size: 16px;
@@ -81,18 +80,25 @@ body {
     justify-content: flex-start;
     transition: transform 0.3s ease-in-out;
     width: 100%;
+    margin-top: 8px;
+}
+
+.carousel h2 {
+    margin: 0;
 }
 
 .day-card {
     flex: 0 0 100%;
     box-sizing: border-box;
     min-width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     border-radius: 12px;
+    padding: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.9);
@@ -107,11 +113,15 @@ body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
+.day-card * {
+    margin: 4px;
+}
+
 .buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin: 8px;
     gap: 20px;
 }
 
@@ -170,7 +180,7 @@ nav {
         var(--air-superiority-blue) 100%
     );
     color: var(--antiflash-white);
-    padding: 15px 64px;
+    padding: 0px 64px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -205,6 +215,10 @@ nav {
     width: 40%;
 }
 
+#home > p {
+    margin: 0;
+}
+
 .current-day-card {
     display: flex;
     flex-direction: column;
@@ -235,6 +249,13 @@ span {
     font-size: 1.1em;
 }
 
+.current-day-card p {
+    margin: 5px;
+}
+
+.current-day-card h2 {
+    margin: 8px;
+}
 /* Footer */
 
 footer {
@@ -295,4 +316,8 @@ button:hover {
 
 button:active {
     transform: translateY(0);
+}
+
+h1 {
+    margin: 0;
 }
