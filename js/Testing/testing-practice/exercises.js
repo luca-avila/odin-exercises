@@ -26,4 +26,22 @@ class Calculator {
         return a * b;
     }
 }
-export { capitalize, reverseString, Calculator };
+
+function caesarCypher(str, shift) {
+    let result = '';
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+        if (char.match(/[a-z]/)) {
+            let newCharCode = char.charCodeAt(0) + shift;
+            if (newCharCode > 122) {
+                newCharCode -= 26;
+            }
+            result += String.fromCharCode(newCharCode);
+        } else {
+            result += char;
+        }
+    }
+    return result;
+}
+
+export { capitalize, reverseString, Calculator, caesarCypher };
