@@ -5,5 +5,5 @@ test('capitalize test', () => {
 });
 
 test('reverse string hello world!', () => {
-    expect(reverseString('Hello World!').toBe('!dlroW olleH'));
+    expect(reverseString('Hello World!')).toBe('!dlroW olleH');
 });
