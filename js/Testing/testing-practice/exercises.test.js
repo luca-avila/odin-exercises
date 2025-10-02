@@ -1,4 +1,9 @@
-import { capitalize, reverseString, Calculator } from './exercises';
+import {
+    capitalize,
+    reverseString,
+    Calculator,
+    caesarCypher,
+} from './exercises';
 
 test('capitalize test', () => {
     expect(capitalize('test')).toBe('Test');
@@ -22,4 +27,8 @@ test('calculator multiply  7 * 3', () => {
 
 test('calculator divide 15 / 3', () => {
     expect(Calculator.divide(15, 3)).toBe(5);
+});
+
+test('caesar cypher xyz 3', () => {
+    expect(caesarCypher('xyz', 3)).toBe('abc');
 });
