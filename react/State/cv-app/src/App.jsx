@@ -1,12 +1,13 @@
-import { useState } from 'react'
 import { Cv } from './components/cv'
 import './App.css'
+import { useState } from 'react'
 
 const person1 = {
     name: 'John',
     age: 30,
     address: '123 Main St',
     number: '1234567890',
+    email: 'randomemail@email.com',
     experiences: [
         {title: 'Software Engineer', place: 'Google', date: '2020-2023'},
         {title: 'Software Engineer', place: 'Facebook', date: '2023-2025'}

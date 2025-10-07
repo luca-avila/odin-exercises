@@ -1,13 +1,12 @@
-import { useState } from "react";
-
 export function Cv({ person }) {
     return (
         <div id="cv">
             <h1>{person.name}</h1>
             <ul>
-                <li>{person.age}years old</li>
+                <li>{person.age} years old</li>
                 <li>{person.address}</li>
                 <li>{person.number}</li>
+                <li>{person.email}</li>
             </ul>
             <br />
             <h2>Experience</h2>
