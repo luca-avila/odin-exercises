@@ -59,7 +59,10 @@ export function CvForm({state}){
 
         <h1>Skills</h1>
         <input type="text" placeholder="Skill" value={skill} onChange={(e) => setSkill(e.target.value)}/>
-        <button onClick={() => state.addSkill(skill)}>Add Skill</button>
+        <button onClick={() => {
+            state.addSkill(skill);
+            setSkill('');
+        }}>Add Skill</button>
     </div>
     )
 }
