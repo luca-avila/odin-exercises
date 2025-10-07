@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { Cv } from './components/cv'
 import { CvForm } from './components/form'
 import './App.css'
@@ -14,15 +15,15 @@ function App() {
     const [skills, setSkills] = useState([]);
 
     const addExperience = (title, place, date) => {
-        setExperiences([...experiences, {title, place, date}]);
+        setExperiences([...experiences, {title, place, date, id: uuidv4()}]);
     }
 
     const addStudy = (title, place, date) => {
-        setStudies([...studies, {title, place, date}]);
+        setStudies([...studies, {title, place, date, id: uuidv4()}]);
     }
 
     const addSkill = (skill) => {
-        setSkills([...skills, skill]);
+        setSkills([...skills, {skill, id: uuidv4()}]);
     }
 
     return (
