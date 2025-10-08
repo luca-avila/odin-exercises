@@ -1,3 +1,4 @@
+import './Cv.css'
 export function Cv({ person, removeExperience, removeStudy, removeSkill, fillForm }) {
 
     const handleFillForm = (id, type, title, place, date) => {
