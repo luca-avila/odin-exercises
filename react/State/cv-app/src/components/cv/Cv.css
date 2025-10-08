@@ -1,0 +1,69 @@
+.cv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid var(--blue-primary);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 var(--blue-primary);
+}
+
+.cv h1 {
+    margin: 0 0 1rem 0;
+    color: var(--blue-secondary);
+}
+
+.cv h2,
+.cv h3 {
+    margin: 1rem 0 0.5rem 0;
+    color: var(--blue-primary);
+}
+
+.cv ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.cv hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid var(--green-accent);
+    margin: 1.5rem 0;
+}
+
+.experience,
+.study,
+.skill {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba(174, 195, 176, 0.3);
+}
+
+.experience h4,
+.study h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--blue-primary);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.buttons button:hover {
+    background-color: var(--blue-secondary);
+}
