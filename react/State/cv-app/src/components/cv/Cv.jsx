@@ -5,7 +5,7 @@ export function Cv({ person, removeExperience, removeStudy, removeSkill, fillFor
     }
 
     return (
-        <div id="cv">
+        <div className="cv">
             <h1>{person.name}</h1>
             <ul>
                 <li>{person.age} years old</li>
