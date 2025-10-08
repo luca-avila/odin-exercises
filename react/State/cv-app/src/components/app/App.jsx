@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import { Cv } from './components/cv'
-import { CvForm } from './components/form'
+import { Cv } from '@/components/cv/Cv'
+import { CvForm } from '@/components/form/Form'
 import './App.css'
 import { useState } from 'react'
 
