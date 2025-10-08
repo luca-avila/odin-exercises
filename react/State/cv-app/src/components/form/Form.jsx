@@ -1,3 +1,4 @@
+import './Form.css'
 export function CvForm({state}){
 
     const handleExperienceSubmit = () => {
