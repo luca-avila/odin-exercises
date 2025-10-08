@@ -1,16 +1,41 @@
-import { useState } from "react";
-
 export function CvForm({state}){
 
-    const [experienceTitle, setExperienceTitle] = useState('');
-    const [experiencePlace, setExperiencePlace] = useState('');
-    const [experienceDate, setExperienceDate] = useState('');
+    const handleExperienceSubmit = () => {
+        if (state.editingType === 'experience' && state.editingId) {
+            state.updateExperience(state.editingId, state.experienceTitle, state.experiencePlace, state.experienceDate);
+            state.setEditingId(null);
+            state.setEditingType(null);
+        } else {
+            state.addExperience(state.experienceTitle, state.experiencePlace, state.experienceDate);
+        }
+        state.setExperienceTitle('');
+        state.setExperiencePlace('');
+        state.setExperienceDate('');
+    };
 
-    const [studyTitle, setStudyTitle] = useState('');
-    const [studyPlace, setStudyPlace] = useState('');
-    const [studyDate, setStudyDate] = useState('');
+    const handleStudySubmit = () => {
+        if (state.editingType === 'study' && state.editingId) {
+            state.updateStudy(state.editingId, state.studyTitle, state.studyPlace, state.studyDate);
+            state.setEditingId(null);
+            state.setEditingType(null);
+        } else {
+            state.addStudy(state.studyTitle, state.studyPlace, state.studyDate);
+        }
+        state.setStudyTitle('');
+        state.setStudyPlace('');
+        state.setStudyDate('');
+    };
 
-    const [skill, setSkill] = useState('');
+    const handleSkillSubmit = () => {
+        if (state.editingType === 'skill' && state.editingId) {
+            state.updateSkill(state.editingId, state.skill);
+            state.setEditingId(null);
+            state.setEditingType(null);
+        } else {
+            state.addSkill(state.skill);
+        }
+        state.setSkill('');
+    };
 
     return (
     <div className="form">
@@ -21,48 +46,33 @@ export function CvForm({state}){
         <input type="text" placeholder="Number" value={state.number} onChange={(e) => state.setNumber(e.target.value)} />
         <input type="text" placeholder="Email" value={state.email} onChange={(e) => state.setEmail(e.target.value)} />
 
-        <br />
+        <hr />
 
         <h1>Experiences</h1>
-        <input type="text" placeholder="Title" value={experienceTitle} onChange={(e) => setExperienceTitle(e.target.value)}/>
-        <input type="text" placeholder="Place" value={experiencePlace} onChange={(e) => setExperiencePlace(e.target.value)}/>
-        <input type="text" placeholder="Date" value={experienceDate} onChange={(e) => setExperienceDate(e.target.value)}/>
-        <button
-            onClick={() => {
-                state.addExperience(experienceTitle, experiencePlace, experienceDate);
-                setExperienceTitle('');
-                setExperiencePlace('');
-                setExperienceDate('');
-            }}
-            >
-            Add Experience
+        <input type="text" placeholder="Title" value={state.experienceTitle} onChange={(e) => state.setExperienceTitle(e.target.value)}/>
+        <input type="text" placeholder="Place" value={state.experiencePlace} onChange={(e) => state.setExperiencePlace(e.target.value)}/>
+        <input type="text" placeholder="Date" value={state.experienceDate} onChange={(e) => state.setExperienceDate(e.target.value)}/>
+        <button onClick={handleExperienceSubmit}>
+            {state.editingType === 'experience' && state.editingId ? 'Update Experience' : 'Add Experience'}
         </button>
 
-        <br />
+        <hr />
         
         <h1>Studies</h1>
-        <input type="text" placeholder="Title" value={studyTitle} onChange={(e) => setStudyTitle(e.target.value)}/>
-        <input type="text" placeholder="Place" value={studyPlace} onChange={(e) => setStudyPlace(e.target.value)}/>
-        <input type="text" placeholder="Date" value={studyDate} onChange={(e) => setStudyDate(e.target.value)}/>
-        <button
-            onClick={() => {
-                state.addStudy(studyTitle, studyPlace, studyDate);
-                setStudyTitle('');
-                setStudyPlace('');
-                setStudyDate('');
-            }}
-            >
-            Add Study
+        <input type="text" placeholder="Title" value={state.studyTitle} onChange={(e) => state.setStudyTitle(e.target.value)}/>
+        <input type="text" placeholder="Place" value={state.studyPlace} onChange={(e) => state.setStudyPlace(e.target.value)}/>
+        <input type="text" placeholder="Date" value={state.studyDate} onChange={(e) => state.setStudyDate(e.target.value)}/>
+        <button onClick={handleStudySubmit}>
+            {state.editingType === 'study' && state.editingId ? 'Update Study' : 'Add Study'}
         </button>
 
-        <br />
+        <hr />
 
         <h1>Skills</h1>
-        <input type="text" placeholder="Skill" value={skill} onChange={(e) => setSkill(e.target.value)}/>
-        <button onClick={() => {
-            state.addSkill(skill);
-            setSkill('');
-        }}>Add Skill</button>
+        <input type="text" placeholder="Skill" value={state.skill} onChange={(e) => state.setSkill(e.target.value)}/>
+        <button onClick={handleSkillSubmit}>
+            {state.editingType === 'skill' && state.editingId ? 'Update Skill' : 'Add Skill'}
+        </button>
     </div>
     )
 }
