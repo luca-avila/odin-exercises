@@ -40,40 +40,42 @@ export function CvForm({state}){
 
     return (
     <div className="form">
-        <h1>General information</h1>
-        <input type="text" placeholder="Name" value={state.name} onChange={(e) => state.setName(e.target.value)} />
-        <input type="text" placeholder="Age" value={state.age} onChange={(e) => state.setAge(e.target.value)} />
-        <input type="text" placeholder="Address" value={state.address} onChange={(e) => state.setAddress(e.target.value)} />
-        <input type="text" placeholder="Number" value={state.number} onChange={(e) => state.setNumber(e.target.value)} />
-        <input type="text" placeholder="Email" value={state.email} onChange={(e) => state.setEmail(e.target.value)} />
-
+        <div className="form-group">
+            <h1>General information</h1>
+            <input type="text" placeholder="Name" value={state.name} onChange={(e) => state.setName(e.target.value)} />
+            <input type="text" placeholder="Age" value={state.age} onChange={(e) => state.setAge(e.target.value)} />
+            <input type="text" placeholder="Address" value={state.address} onChange={(e) => state.setAddress(e.target.value)} />
+            <input type="text" placeholder="Number" value={state.number} onChange={(e) => state.setNumber(e.target.value)} />
+            <input type="text" placeholder="Email" value={state.email} onChange={(e) => state.setEmail(e.target.value)} />
+        </div>
         <hr />
-
-        <h1>Experiences</h1>
-        <input type="text" placeholder="Title" value={state.experienceTitle} onChange={(e) => state.setExperienceTitle(e.target.value)}/>
-        <input type="text" placeholder="Place" value={state.experiencePlace} onChange={(e) => state.setExperiencePlace(e.target.value)}/>
-        <input type="text" placeholder="Date" value={state.experienceDate} onChange={(e) => state.setExperienceDate(e.target.value)}/>
-        <button onClick={handleExperienceSubmit}>
-            {state.editingType === 'experience' && state.editingId ? 'Update Experience' : 'Add Experience'}
-        </button>
-
+        <div className="form-group">
+            <h1>Experiences</h1>
+            <input type="text" placeholder="Title" value={state.experienceTitle} onChange={(e) => state.setExperienceTitle(e.target.value)}/>
+            <input type="text" placeholder="Place" value={state.experiencePlace} onChange={(e) => state.setExperiencePlace(e.target.value)}/>
+            <input type="text" placeholder="Date" value={state.experienceDate} onChange={(e) => state.setExperienceDate(e.target.value)}/>
+            <button onClick={handleExperienceSubmit}>
+                {state.editingType === 'experience' && state.editingId ? 'Update Experience' : 'Add Experience'}
+            </button>
+        </div>
         <hr />
-        
-        <h1>Studies</h1>
-        <input type="text" placeholder="Title" value={state.studyTitle} onChange={(e) => state.setStudyTitle(e.target.value)}/>
-        <input type="text" placeholder="Place" value={state.studyPlace} onChange={(e) => state.setStudyPlace(e.target.value)}/>
-        <input type="text" placeholder="Date" value={state.studyDate} onChange={(e) => state.setStudyDate(e.target.value)}/>
-        <button onClick={handleStudySubmit}>
-            {state.editingType === 'study' && state.editingId ? 'Update Study' : 'Add Study'}
-        </button>
-
+        <div className="form-group">
+            <h1>Studies</h1>
+            <input type="text" placeholder="Title" value={state.studyTitle} onChange={(e) => state.setStudyTitle(e.target.value)}/>
+            <input type="text" placeholder="Place" value={state.studyPlace} onChange={(e) => state.setStudyPlace(e.target.value)}/>
+            <input type="text" placeholder="Date" value={state.studyDate} onChange={(e) => state.setStudyDate(e.target.value)}/>
+            <button onClick={handleStudySubmit}>
+                {state.editingType === 'study' && state.editingId ? 'Update Study' : 'Add Study'}
+            </button>
+        </div>
         <hr />
-
-        <h1>Skills</h1>
-        <input type="text" placeholder="Skill" value={state.skill} onChange={(e) => state.setSkill(e.target.value)}/>
-        <button onClick={handleSkillSubmit}>
-            {state.editingType === 'skill' && state.editingId ? 'Update Skill' : 'Add Skill'}
-        </button>
+        <div className="form-group">
+            <h1>Skills</h1>
+            <input type="text" placeholder="Skill" value={state.skill} onChange={(e) => state.setSkill(e.target.value)}/>
+            <button onClick={handleSkillSubmit}>
+                {state.editingType === 'skill' && state.editingId ? 'Update Skill' : 'Add Skill'}
+            </button>
+        </div>
     </div>
     )
 }
