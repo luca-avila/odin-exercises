@@ -1,10 +1,10 @@
-function Card({ pokemon }){
+function Card({ pokemon, onClick }) {
     return (
-        <div className="card">
+        <div className="card" onClick={onClick}>
             <img src={pokemon.image} alt={pokemon.name} />
-            <h1>{pokemon.name}</h1>
+            <h3>{pokemon.name}</h3>
         </div>
-    )
+    );
 }
 
 export default Card;
