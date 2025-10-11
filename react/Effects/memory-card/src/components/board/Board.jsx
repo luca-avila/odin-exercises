@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "@/components/card/Card";
+import "@/components/board/Board.css"
 
 function Board({ pokemons, onCardClick }) {
     const [shuffledPokemons, setShuffledPokemons] = useState([]);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Board from "@/components/board/Board"
 import { getPokemonsWithImages } from "@/api/api"
+import "@/components/app/App.css"
 
 function App() {
     const [pokemons, setPokemons] = useState([]);

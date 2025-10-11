@@ -1,3 +1,5 @@
+import "@/components/card/Card.css"
+
 function Card({ pokemon, onClick }) {
     return (
         <div className="card" onClick={onClick}>
