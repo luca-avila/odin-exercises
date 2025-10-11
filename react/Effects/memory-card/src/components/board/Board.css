@@ -1,0 +1,19 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    margin: 0px 16px
+}
+
+/* Force 5 columns on wide screens */
+@media (min-width: 900px) {
+    .board {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
